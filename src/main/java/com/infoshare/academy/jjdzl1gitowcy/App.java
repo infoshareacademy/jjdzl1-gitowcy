@@ -1,7 +1,7 @@
 package com.infoshare.academy.jjdzl1gitowcy;
 
 /**
- * Hello world!
+ * Project GITowcy Group!
  *
  */
 public class App 
