@@ -1,7 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
 
 /**
  * Project GITowcy Group!
@@ -9,14 +8,8 @@ import java.io.IOException;
  */
 public class App 
 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) {
 
-        try {
-            ReadFromCSV.readFromFile();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Menu.showMenu();
     }
 }
