@@ -16,8 +16,22 @@ public class ReadFromCSV {
 
         List<String[]> allLines = reader.readAll();
 
-        for (String[] row : allLines) {
-            System.out.println(Arrays.toString(row));
+        int noElements = allLines.get(0).length;
+
+        int noLines = allLines.size();
+
+
+//        System.out.println( noElements + "   " + noLines);
+
+        for (int j = 1; j < noLines; j++) {
+            String[] singleRow = allLines.get(j);
+
+            for (int i = 0; i < noElements - 1; i++) {
+                System.out.print(singleRow[i] + " ");
+            }
+            System.out.println();
         }
+
+
     }
 }
