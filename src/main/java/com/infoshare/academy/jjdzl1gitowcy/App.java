@@ -1,5 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -12,6 +13,8 @@ public class App
 
         try {
             ReadFromCSV.readFromFile();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
