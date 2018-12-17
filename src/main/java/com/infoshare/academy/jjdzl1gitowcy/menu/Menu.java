@@ -11,7 +11,7 @@ public class Menu {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
         System.out.println("1 - Solve a Quiz");
         System.out.println("2 - Add a Quiz");
-        System.out.println("3 - Exit the program");
+        System.out.println("Q - Exit the program");
 
         //First level of menu
         fromWhatMenu = 1;
@@ -24,9 +24,28 @@ public class Menu {
         System.out.println("2 - PHP");
         System.out.println("3 - HTML");
         System.out.println("4 - Back to Main Menu");
+        System.out.println("Q - Exit the program");
 
         //Second level of menu
         fromWhatMenu = 2;
+        UserChoice.userChoice();
+    }
+
+    public static void showQuizStartMenu(String chosenLanguage) {
+        String quizName = "";
+
+        if (chosenLanguage.equals("1")) {
+            quizName = "Java";
+        } else if (chosenLanguage.equals("2")) {
+            quizName = "PHP";
+        } else {
+            quizName = "HTML";
+        }
+
+        System.out.println("You choose " + quizName + " quiz!");
+        System.out.println("Enter your name/nick below to assign your quiz score to it");
+        System.out.println("Q - Back to Main Menu");
+        fromWhatMenu = 4;
         UserChoice.userChoice();
     }
 

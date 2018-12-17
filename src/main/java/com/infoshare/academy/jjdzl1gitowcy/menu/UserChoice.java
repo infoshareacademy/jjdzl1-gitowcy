@@ -25,40 +25,66 @@ public class UserChoice {
                 File.addQuizFromUserFile(filepath);
             }
 
+        } else if (Menu.fromWhatMenu == 4) {
+            System.out.print("Your name/nick: ");
+            String userName = scanner.next();
+
+            if (userName.equals("q") || userName.equals("Q")) {
+                ScreenManager.clearScreen();
+                Menu.showMainMenu();
+            } else {
+                //Method to enter into quiz with your name
+            }
+
         } else {
             System.out.print("Your choice: ");
-            Integer userChoice = scanner.nextInt();
+            String userChoice = scanner.next();
             userMenuChoice(userChoice);
         }
     }
 
-    public static void userMenuChoice(Integer userChoice) {
+    public static void userMenuChoice(String userChoice) {
 
         switch (userChoice) {
-            case 1:
+            case "1":
                 if (Menu.fromWhatMenu == 1) {
                     ScreenManager.clearScreen();
                     Menu.showQuizMenu();
+                } else if (Menu.fromWhatMenu == 2) {
+                    ScreenManager.clearScreen();
+                    Menu.showQuizStartMenu(userChoice);
                 }
                 break;
-            case 2:
+            case "2":
                 if (Menu.fromWhatMenu == 1) {
                     ScreenManager.clearScreen();
                     Menu.showAddQuizMenu();
+                } else if (Menu.fromWhatMenu == 2) {
+                    ScreenManager.clearScreen();
+                    Menu.showQuizStartMenu(userChoice);
                 }
                 break;
-            case 3:
+            case "3":
                 if (Menu.fromWhatMenu == 1) {
                     System.out.println("Return to us again!");
                     exit(0);
+                } else if (Menu.fromWhatMenu == 2) {
+                    ScreenManager.clearScreen();
+                    Menu.showQuizStartMenu(userChoice);
                 }
                 break;
-            case 4:
+            case "4":
                 if (Menu.fromWhatMenu == 2) {
                     ScreenManager.clearScreen();
                     Menu.showMainMenu();
                 }
                 break;
+            case "Q":
+                System.out.println("Return to us again!");
+                exit(0);
+            case "q":
+                System.out.println("Return to us again!");
+                exit(0);
             default: {
                 System.out.println("Error, choice not found!");
             }
