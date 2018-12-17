@@ -1,6 +1,7 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
 import com.infoshare.academy.jjdzl1gitowcy.file_tools.File;
+import com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager;
 
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class UserChoice {
             String filepath = scanner.nextLine();
 
             if (filepath.equals("q") || filepath.equals("Q")) {
+                ScreenManager.clearScreen();
                 Menu.showMainMenu();
             } else {
                 File.addQuizFromUserFile(filepath);
@@ -35,11 +37,13 @@ public class UserChoice {
         switch (userChoice) {
             case 1:
                 if (Menu.fromWhatMenu == 1) {
+                    ScreenManager.clearScreen();
                     Menu.showQuizMenu();
                 }
                 break;
             case 2:
                 if (Menu.fromWhatMenu == 1) {
+                    ScreenManager.clearScreen();
                     Menu.showAddQuizMenu();
                 }
                 break;
@@ -51,6 +55,7 @@ public class UserChoice {
                 break;
             case 4:
                 if (Menu.fromWhatMenu == 2) {
+                    ScreenManager.clearScreen();
                     Menu.showMainMenu();
                 }
                 break;

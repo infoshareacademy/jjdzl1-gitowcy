@@ -33,7 +33,6 @@ public class Menu {
     public static void showAddQuizMenu() {
         System.out.println("--- ADDING YOUR QUIZ TO PROGRAM ---");
         System.out.println("Your quiz must be saved as a csv file!");
-        System.out.println("Q - Back to Main Menu");
 
         //Third level of menu
         fromWhatMenu = 3;
