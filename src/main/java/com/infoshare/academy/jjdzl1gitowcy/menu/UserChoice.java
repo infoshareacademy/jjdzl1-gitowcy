@@ -22,7 +22,7 @@ public class UserChoice {
                 ScreenManager.clearScreen();
                 Menu.showMainMenu();
             } else {
-                File.addQuizFromUserFile(filepath);
+                File.readFromCSVFile(filepath);
             }
 
         } else if (Menu.fromWhatMenu == 4) {
