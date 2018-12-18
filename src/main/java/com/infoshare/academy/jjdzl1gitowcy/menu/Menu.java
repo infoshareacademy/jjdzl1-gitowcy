@@ -1,6 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import javax.jws.soap.SOAPBinding;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
 
 public class Menu {
 
@@ -15,7 +15,7 @@ public class Menu {
 
         //First level of menu
         fromWhatMenu = 1;
-        UserChoice.userChoice();
+        userChoice();
     }
 
     public static void showQuizMenu() {
@@ -28,7 +28,7 @@ public class Menu {
 
         //Second level of menu
         fromWhatMenu = 2;
-        UserChoice.userChoice();
+        userChoice();
     }
 
     public static void showQuizStartMenu(String chosenLanguage) {
@@ -46,7 +46,7 @@ public class Menu {
         System.out.println("Enter your name/nick below to assign your quiz score to it");
         System.out.println("Q - Back to Main Menu");
         fromWhatMenu = 4;
-        UserChoice.userChoice();
+        userChoice();
     }
 
     public static void showAddQuizMenu() {
@@ -55,6 +55,6 @@ public class Menu {
 
         //Third level of menu
         fromWhatMenu = 3;
-        UserChoice.userChoice();
+        userChoice();
     }
 }
