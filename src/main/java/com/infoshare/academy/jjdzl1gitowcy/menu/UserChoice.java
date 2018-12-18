@@ -1,6 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import com.infoshare.academy.jjdzl1gitowcy.file_tools.File;
+import com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile;
 import com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager;
 
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class UserChoice {
                 ScreenManager.clearScreen();
                 Menu.showMainMenu();
             } else {
-                File.readFromCSVFile(filepath);
+                UserFile.addFileFromUser(filepath);
             }
 
         } else if (Menu.fromWhatMenu == 4) {
