@@ -12,6 +12,8 @@ import static java.lang.System.exit;
 
 public class UserChoice {
 
+    public static String userName;
+
     public static void userChoice() {
 
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +32,7 @@ public class UserChoice {
 
         } else if (fromWhatMenu == 4) {
             System.out.print("Your name/nick: ");
-            String userName = scanner.next();
+            userName = scanner.next();
 
             if (userName.equals("q") || userName.equals("Q")) {
                 clearScreen();
