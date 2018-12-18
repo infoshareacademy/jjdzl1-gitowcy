@@ -1,11 +1,13 @@
 package com.infoshare.academy.jjdzl1gitowcy.file_tools;
 
-import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
-import com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+
+import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showAddQuizMenu;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showMainMenu;
+import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class UserFile {
 
@@ -19,15 +21,15 @@ public class UserFile {
 
         try {
             FileUtils.copyFile(userFile, fileToSave);
-            ScreenManager.clearScreen();
+            clearScreen();
             System.out.println("Your file was successfully saved!");
             System.out.println();
-            Menu.showMainMenu();
+            showMainMenu();
         } catch (IOException e) {
-            ScreenManager.clearScreen();
+            clearScreen();
             System.out.println("Something went wrong. Try again...");
             System.out.println();
-            Menu.showAddQuizMenu();
+            showAddQuizMenu();
         }
     }
 
