@@ -66,15 +66,22 @@ public class UserChoice {
                 break;
             case "3":
                 if (Menu.fromWhatMenu == 1) {
-                    System.out.println("Return to us again!");
-                    exit(0);
+                    ScreenManager.clearScreen();
+                    System.out.println("Hmm, we don't have this choice. Try again...");
+                    System.out.println();
+                    Menu.showMainMenu();
                 } else if (Menu.fromWhatMenu == 2) {
                     ScreenManager.clearScreen();
                     Menu.showQuizStartMenu(userChoice);
                 }
                 break;
             case "4":
-                if (Menu.fromWhatMenu == 2) {
+                if (Menu.fromWhatMenu == 1) {
+                    ScreenManager.clearScreen();
+                    System.out.println("Hmm, we don't have this choice. Try again...");
+                    System.out.println();
+                    Menu.showMainMenu();
+                } else if (Menu.fromWhatMenu == 2) {
                     ScreenManager.clearScreen();
                     Menu.showMainMenu();
                 }
@@ -86,7 +93,14 @@ public class UserChoice {
                 System.out.println("Return to us again!");
                 exit(0);
             default: {
-                System.out.println("Error, choice not found!");
+                ScreenManager.clearScreen();
+                System.out.println("Hmm, we don't have this choice. Try again...");
+                System.out.println();
+                if (Menu.fromWhatMenu == 1) {
+                    Menu.showMainMenu();
+                } else if (Menu.fromWhatMenu == 2) {
+                    Menu.showQuizMenu();
+                }
             }
         }
     }
