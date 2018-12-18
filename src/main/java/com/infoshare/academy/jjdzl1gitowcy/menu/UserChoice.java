@@ -31,6 +31,7 @@ public class UserChoice {
             }
 
         } else if (fromWhatMenu == 4) {
+
             System.out.print("Your name/nick: ");
             userName = scanner.next();
 

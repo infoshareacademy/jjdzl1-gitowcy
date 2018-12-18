@@ -2,6 +2,8 @@ package com.infoshare.academy.jjdzl1gitowcy.quiz;
 
 import au.com.bytecode.opencsv.CSVReader;
 import com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice;
+import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,7 +20,7 @@ public class Quiz {
 
     public static void loadQuiz() {
 
-        String quizFilePath = "src/main/resources/test_quiz.csv";
+        String quizFilePath = Menu.pathToCSV;
         File quizFile = new File(quizFilePath);
         CSVReader readQuiz = null;
 

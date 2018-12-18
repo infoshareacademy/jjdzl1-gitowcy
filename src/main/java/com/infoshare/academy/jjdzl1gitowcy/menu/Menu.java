@@ -4,6 +4,9 @@ import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
 
 public class Menu {
 
+    // The path to the CSV file chosen after test type question
+    public static String pathToCSV;
+
     //This is var(flag) that tells us which menu the UserChoice.userChoice method was called from
     public static int fromWhatMenu = 0;
 
@@ -33,19 +36,29 @@ public class Menu {
 
     public static void showQuizStartMenu(String chosenLanguage) {
         String quizName = "";
+        int level = 1;
 
         if (chosenLanguage.equals("1")) {
             quizName = "Java";
+            Menu pathToJAVAcsv = new Menu();
+            pathToJAVAcsv.pathToCSV = "src/main/resources/java_" + level + ".csv";
         } else if (chosenLanguage.equals("2")) {
             quizName = "PHP";
+            Menu pathToPHPcsv = new Menu();
+            pathToPHPcsv.pathToCSV = "src/main/resources/php_" + level + ".csv";
         } else {
             quizName = "HTML";
+            Menu pathToHTMLcsv = new Menu();
+            pathToHTMLcsv.pathToCSV = "src/main/resources/html_" + level + ".csv";
         }
 
         System.out.println("You choose " + quizName + " quiz!");
         System.out.println("Enter your name/nick below to assign your quiz score to it");
         System.out.println("Q - Back to Main Menu");
+
         fromWhatMenu = 4;
+        // Control info - delete after developing
+        System.out.println("Path to the corresponding CSV file: " +pathToCSV);
         userChoice();
     }
 
