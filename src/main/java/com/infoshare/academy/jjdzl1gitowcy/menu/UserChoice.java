@@ -33,7 +33,7 @@ public class UserChoice {
                 ScreenManager.clearScreen();
                 Menu.showMainMenu();
             } else {
-                //Method to enter into quiz with your name
+                //TODO Method to enter into quiz with your name
             }
 
         } else {

@@ -35,8 +35,7 @@ public class UserFile {
 
         String resourcesPath = "src/main/resources";
         File directory = new File(resourcesPath);
-        int numberOfFiles = directory.list().length;
 
-        return numberOfFiles;
+        return directory.list().length;
     }
 }
