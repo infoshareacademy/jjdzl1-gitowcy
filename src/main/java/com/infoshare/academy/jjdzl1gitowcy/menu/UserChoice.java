@@ -1,9 +1,12 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
+import com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz;
+
 import java.util.Scanner;
 
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.*;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 import static java.lang.System.exit;
 
@@ -33,7 +36,8 @@ public class UserChoice {
                 clearScreen();
                 showMainMenu();
             } else {
-                //TODO Method to enter into quiz with your name
+                clearScreen();
+                printQuizHeader();
             }
 
         } else {
