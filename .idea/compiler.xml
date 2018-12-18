@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="jjdzl1-gitowcy" target="1.7" />
+      <module name="jjdzl1-gitowcy" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
