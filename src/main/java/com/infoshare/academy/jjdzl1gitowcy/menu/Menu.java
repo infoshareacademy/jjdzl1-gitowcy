@@ -66,8 +66,6 @@ public class Menu {
         }
 
         System.out.println("You choose " + quizName + " quiz!");
-        // Control info - delete after developing
-        System.out.println("\nPath to the corresponding CSV file: " + pathToCSV);
         choseLevelMenu();
     }
 
@@ -94,19 +92,13 @@ public class Menu {
             pathTolevelCSV.pathToCSV = firstPartPathCSV + levelName + ".csv";
         }
 
-        System.out.println("You choose " + levelType + " quiz" + " with level " + chosenLevel + " GoodLuck!");
+        System.out.println("You choose " + levelType + " quiz" + " with level " + chosenLevel + ". GoodLuck!");
         System.out.println("Enter your name/nick below to assign your quiz score to it");
         System.out.println("Q - Back to Main Menu");
-
-        // Direct to the nick type menu
+        // Direct to the nick type receiver
         fromWhatMenu = 5;
-        // Control info - delete after developing
-        System.out.println("\nPath to the corresponding CSV file: " + pathToCSV);
-
         userChoice();
-
     }
-
 
     public static void showAddQuizMenu() {
         System.out.println("--- ADDING YOUR QUIZ TO PROGRAM ---");

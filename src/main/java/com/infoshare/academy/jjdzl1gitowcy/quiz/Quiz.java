@@ -10,13 +10,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
 
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class Quiz {
 
     public static int goodAnswerCounter = 0;
+
+    public static String[] rowTest;
 
     public static void loadQuiz() {
 
@@ -43,6 +44,10 @@ public class Quiz {
 
             printQuestion = false;
             clearScreen();
+            Quiz currentRow = new Quiz();
+            currentRow.rowTest = row;
+            // Delete after developing
+//            System.out.println("**** info test - Question of test: " + rowTest[0]);
 
             for (int i = 0; i < row.length - 2; i++) {
 
@@ -69,23 +74,27 @@ public class Quiz {
 
     public static void getAnswerFromUser() {
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter the number of answer: ");
-        int userAnswer = scanner.nextInt();
+
+        int userAnswer = InputKeys.inputNumbers(1, 4);
 
         switch (userAnswer) {
             case 1:
+                CheckTest.isCorrectAnswer(1, rowTest);
                 break;
             case 2:
-                goodAnswerCounter++;
+                CheckTest.isCorrectAnswer(2, rowTest);
                 break;
             case 3:
+                CheckTest.isCorrectAnswer(3, rowTest);
                 break;
             case 4:
+                CheckTest.isCorrectAnswer(4, rowTest);
                 break;
             default:
                 break;
         }
+
     }
 }
