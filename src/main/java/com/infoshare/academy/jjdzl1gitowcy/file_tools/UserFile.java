@@ -26,6 +26,7 @@ public class UserFile {
             FileUtils.copyFile(userFile, fileToSave);
             clearScreen();
             System.out.println("Your file was successfully saved!");
+            System.out.println("File was saved in " + destination);
             System.out.println();
             showMainMenu();
         } catch (IOException e) {
