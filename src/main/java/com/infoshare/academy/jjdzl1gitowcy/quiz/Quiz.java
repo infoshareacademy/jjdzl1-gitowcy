@@ -16,6 +16,7 @@ public class Quiz {
     public static String[] listOfQuizzes;
     public static int numberOfQuizzes = 0;
     public static String quizNameToSolve;
+    public static String userResultsToSave;
 
     public static void loadQuiz() {
 
@@ -89,7 +90,10 @@ public class Quiz {
     public static void printUserResult(int quizLength) {
         clearScreen();
         System.out.println("Quiz was ended. Here you have your score.");
-        System.out.println(userName + ": " + goodAnswerCounter + "/" + quizLength);
+        userResultsToSave = userName + ": " + goodAnswerCounter + "/" + quizLength;
+
+        System.out.println(userResultsToSave);
+        saveUserResultToFile(userResultsToSave);
     }
 
     public static void searchFileByName() {
@@ -135,5 +139,23 @@ public class Quiz {
 
         quizNameToSolve = listOfQuizzes[numberFromQuizListToSolve - 1];
         loadQuiz();
+    }
+
+    public static void saveUserResultToFile(String userResultsToSave) {
+
+        String destToSave = "src/main/resources/users_results.txt";
+        File file = new File(destToSave);
+        FileWriter resultToSave = null;
+
+        try {
+            resultToSave = new FileWriter(file, true);
+            resultToSave.write(userResultsToSave);
+            resultToSave.write("\n");
+            resultToSave.close();
+            System.out.println("Your score was successfully saved");
+        } catch (IOException e) {
+            System.out.println("Something went wrong. We were unable to save your score...");
+            e.printStackTrace();
+        }
     }
 }
