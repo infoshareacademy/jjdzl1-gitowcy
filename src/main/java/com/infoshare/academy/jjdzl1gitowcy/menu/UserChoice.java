@@ -30,7 +30,7 @@ public class UserChoice {
                 addFileFromUser(filepath);
             }
 
-        }  else if (fromWhatMenu == 5) {
+        } else if (fromWhatMenu == 5) {
 
 
             System.out.print("Your name/nick: ");
@@ -61,8 +61,7 @@ public class UserChoice {
                 } else if (fromWhatMenu == 2) {
                     clearScreen();
                     showQuizStartMenu(userChoice);
-                }
-                else if (fromWhatMenu == 4) {
+                } else if (fromWhatMenu == 4) {
                     clearScreen();
                     getTheTestLevel(userChoice);
                 }
@@ -74,8 +73,7 @@ public class UserChoice {
                 } else if (fromWhatMenu == 2) {
                     clearScreen();
                     showQuizStartMenu(userChoice);
-                }
-                else if (fromWhatMenu == 4) {
+                } else if (fromWhatMenu == 4) {
                     clearScreen();
                     getTheTestLevel(userChoice);
                 }
@@ -89,8 +87,7 @@ public class UserChoice {
                 } else if (fromWhatMenu == 2) {
                     clearScreen();
                     showQuizStartMenu(userChoice);
-                }
-                else if (fromWhatMenu == 4) {
+                } else if (fromWhatMenu == 4) {
                     clearScreen();
                     showMainMenu();
                 }
