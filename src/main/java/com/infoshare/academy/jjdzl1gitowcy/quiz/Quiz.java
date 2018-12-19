@@ -1,8 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy.quiz;
 
 import au.com.bytecode.opencsv.CSVReader;
-import com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,6 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class Quiz {
@@ -18,12 +17,12 @@ public class Quiz {
 
     public static void loadQuiz() {
 
-        String quizFilePath = "src/main/resources/test_quiz.csv";
+        String quizFilePath = "src/main/resources/java_1.csv";
         File quizFile = new File(quizFilePath);
         CSVReader readQuiz = null;
 
         try {
-            readQuiz = new CSVReader(new FileReader(quizFile), ';', '"', 1);
+            readQuiz = new CSVReader(new FileReader(quizFile), ',', '"', 1);
             List<String[]> quizLines = readQuiz.readAll();
             printQuiz(quizLines);
         } catch (FileNotFoundException e) {
@@ -36,6 +35,7 @@ public class Quiz {
     public static void printQuiz(List<String[]> quiz) {
 
         boolean printQuestion;
+        int sizeOfQuiz = quiz.size();
 
         for (String[] row : quiz) {
 
@@ -54,10 +54,7 @@ public class Quiz {
             }
             getAnswerFromUser();
         }
-
-        clearScreen();
-        System.out.println("Quiz was ended. Here you have your score.");
-        System.out.println(UserChoice.userName + ": " + goodAnswerCounter + "/" + quiz.size());
+        printUserResult(sizeOfQuiz);
     }
 
     public static void printQuizHeader() {
@@ -85,5 +82,11 @@ public class Quiz {
             default:
                 break;
         }
+    }
+
+    public static void printUserResult(int quizLength) {
+        clearScreen();
+        System.out.println("Quiz was ended. Here you have your score.");
+        System.out.println(userName + ": " + goodAnswerCounter + "/" + quizLength);
     }
 }
