@@ -1,6 +1,7 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
+import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class Menu {
 
@@ -34,33 +35,78 @@ public class Menu {
         userChoice();
     }
 
+    public static void choseLevelMenu() {
+        clearScreen();
+        System.out.println("--- CHOOSE LEVEL OF THE QUIZ ---");
+        System.out.println("1 - easy level");
+        System.out.println("2 - difficult level");
+        System.out.println("3 - Back to Main Menu");
+        System.out.println("Q - Exit the program");
+
+        //Fourth level of menu
+        fromWhatMenu = 4;
+        userChoice();
+    }
+
     public static void showQuizStartMenu(String chosenLanguage) {
         String quizName = "";
-        int level = 1;
 
         if (chosenLanguage.equals("1")) {
             quizName = "Java";
             Menu pathToJAVAcsv = new Menu();
-            pathToJAVAcsv.pathToCSV = "src/main/resources/java_" + level + ".csv";
+            pathToJAVAcsv.pathToCSV = "src/main/resources/java_";
         } else if (chosenLanguage.equals("2")) {
             quizName = "PHP";
             Menu pathToPHPcsv = new Menu();
-            pathToPHPcsv.pathToCSV = "src/main/resources/php_" + level + ".csv";
+            pathToPHPcsv.pathToCSV = "src/main/resources/php_";
         } else {
             quizName = "HTML";
             Menu pathToHTMLcsv = new Menu();
-            pathToHTMLcsv.pathToCSV = "src/main/resources/html_" + level + ".csv";
+            pathToHTMLcsv.pathToCSV = "src/main/resources/html_";
         }
 
         System.out.println("You choose " + quizName + " quiz!");
+        // Control info - delete after developing
+        System.out.println("\nPath to the corresponding CSV file: " + pathToCSV);
+        choseLevelMenu();
+    }
+
+    public static void getTheTestLevel(String chosenLevel) {
+        String levelName = "";
+        String levelType = "";
+        String firstPartPathCSV = pathToCSV;
+
+        if (firstPartPathCSV.toLowerCase().contains("java")) {
+            levelType = ("JAVA");
+        } else if (firstPartPathCSV.toLowerCase().contains("php")) {
+            levelType = ("PHP");
+        } else if (firstPartPathCSV.toLowerCase().contains("html")) {
+            levelType = ("HTML");
+        }
+
+        if (chosenLevel.equals("1")) {
+            levelName = "1";
+            Menu pathTolevelCSV = new Menu();
+            pathTolevelCSV.pathToCSV = firstPartPathCSV + levelName + ".csv";
+        } else {
+            levelName = "2";
+            Menu pathTolevelCSV = new Menu();
+            pathTolevelCSV.pathToCSV = firstPartPathCSV + levelName + ".csv";
+        }
+
+        System.out.println("You choose " + levelType + " quiz" + " with level " + chosenLevel + " GoodLuck!");
         System.out.println("Enter your name/nick below to assign your quiz score to it");
         System.out.println("Q - Back to Main Menu");
 
-        fromWhatMenu = 4;
+        // Direct to the nick type menu
+        fromWhatMenu = 5;
         // Control info - delete after developing
-        System.out.println("Path to the corresponding CSV file: " +pathToCSV);
+        System.out.println("\nPath to the corresponding CSV file: " + pathToCSV);
+
         userChoice();
+
     }
+
 
     public static void showAddQuizMenu() {
         System.out.println("--- ADDING YOUR QUIZ TO PROGRAM ---");

@@ -30,7 +30,8 @@ public class UserChoice {
                 addFileFromUser(filepath);
             }
 
-        } else if (fromWhatMenu == 4) {
+        }  else if (fromWhatMenu == 5) {
+
 
             System.out.print("Your name/nick: ");
             userName = scanner.next();
@@ -61,6 +62,10 @@ public class UserChoice {
                     clearScreen();
                     showQuizStartMenu(userChoice);
                 }
+                else if (fromWhatMenu == 4) {
+                    clearScreen();
+                    getTheTestLevel(userChoice);
+                }
                 break;
             case "2":
                 if (fromWhatMenu == 1) {
@@ -69,6 +74,10 @@ public class UserChoice {
                 } else if (fromWhatMenu == 2) {
                     clearScreen();
                     showQuizStartMenu(userChoice);
+                }
+                else if (fromWhatMenu == 4) {
+                    clearScreen();
+                    getTheTestLevel(userChoice);
                 }
                 break;
             case "3":
@@ -80,6 +89,10 @@ public class UserChoice {
                 } else if (fromWhatMenu == 2) {
                     clearScreen();
                     showQuizStartMenu(userChoice);
+                }
+                else if (fromWhatMenu == 4) {
+                    clearScreen();
+                    showMainMenu();
                 }
                 break;
             case "4":

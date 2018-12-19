@@ -1,0 +1,11 @@
+Question;Answer_1;Answer_2;Answer_3;Answer_4;Correct_Answer;No_Correct
+How the web pages are linked together?;by supertext;by hypertext;by linkedtext;by hlink;By hypertext;2
+What kind of language is HTML?;object oriented language;server-side scriptingÿlanguage;markup language;functional language;Markup Language; 3
+Which tag represents the document's header?;<header>;<head>;<h>;<body>;<head>;2
+What is the closing tag of the paragraph?;<p>;<!p>;<\p>;</p>;</p>;4
+What is the correct HTML element to bold the text?;<b>;<i>;<bld>;<bold>;<b>;1
+What is the correct HTML element for italic the text?;<it>;<i>;<b>;<n>;<i>;2
+How can you make an unordered list?;<unol>;<ul>;<ulist>;<unl>;<ul>;2
+How can you make an ordered list?;<orderl>;<orderlist>;<olist>;<ol>;<ol>;4
+What is the correct HTML element to create a table?;<array>;<table>;<tab>;<t>;<table>;2
+What is the attribute for setting a background color?;bgcolor;<bgclr>;<bgcolor>;bgclr;bgcolor;1

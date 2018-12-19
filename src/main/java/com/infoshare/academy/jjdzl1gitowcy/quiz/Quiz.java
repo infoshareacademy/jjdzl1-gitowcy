@@ -44,7 +44,7 @@ public class Quiz {
             printQuestion = false;
             clearScreen();
 
-            for (int i = 0; i < row.length - 1; i++) {
+            for (int i = 0; i < row.length - 2; i++) {
 
                 if (printQuestion == false) {
                     System.out.println(row[0]);
