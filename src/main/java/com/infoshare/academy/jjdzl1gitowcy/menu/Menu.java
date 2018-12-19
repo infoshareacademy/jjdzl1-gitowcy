@@ -6,6 +6,7 @@ public class Menu {
 
     //This is var(flag) that tells us which menu the UserChoice.userChoice method was called from
     public static int fromWhatMenu = 0;
+    public static String quizName = "";
 
     public static void showMainMenu() {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
@@ -32,14 +33,14 @@ public class Menu {
     }
 
     public static void showQuizStartMenu(String chosenLanguage) {
-        String quizName = "";
-
         if (chosenLanguage.equals("1")) {
             quizName = "Java";
         } else if (chosenLanguage.equals("2")) {
             quizName = "PHP";
-        } else {
+        } else if (chosenLanguage.equals("3")) {
             quizName = "HTML";
+        } else {
+            System.out.println("Hmm, we don't have this choice. Try again...");
         }
 
         System.out.println("You choose " + quizName + " quiz!");
