@@ -3,3 +3,12 @@ Mike: 3/5, HTML
 Adrian: 5/5, Java
 Marcin: 3/10, PHP
 Boris: 0/9, HTML
+Kamil: 0/5, Java
+Kamil: 1/9, HTML
+Kamil: 1/10, HTML
+Kamil: 1/10, HTML
+Kamil: 1/10, HTML
+Kamil: 7/10, HTML
+Adrian: 8/10, HTML
+Mikołaj: 1/5, Java
+kamil: 1/1, Java

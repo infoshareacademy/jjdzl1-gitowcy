@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.quizName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showMainMenu;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.*;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class Quiz {
@@ -20,6 +21,9 @@ public class Quiz {
     public static int numberOfQuizzes = 0;
     public static String quizNameToSolve;
     public static String userResultsToSave;
+    public static String correctAnswer;
+    public static List<String[]> quizLines = null;
+    public static String[] currentRowToCheck;
 
     public static void loadQuiz() {
 
@@ -29,7 +33,7 @@ public class Quiz {
 
         try {
             readQuiz = new CSVReader(new FileReader(quizFile), ';', '"', 1);
-            List<String[]> quizLines = readQuiz.readAll();
+            quizLines = readQuiz.readAll();
             printQuiz(quizLines);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -47,6 +51,7 @@ public class Quiz {
 
             printQuestion = false;
             clearScreen();
+            currentRowToCheck = row;
 
             for (int i = 0; i < row.length - 1; i++) {
 
@@ -57,6 +62,7 @@ public class Quiz {
                 }
 
                 System.out.println(i + ". " + row[i]);
+                correctAnswer = row[5];
             }
             getAnswerFromUser();
         }
@@ -77,15 +83,23 @@ public class Quiz {
 
         switch (userAnswer) {
             case 1:
+                if (checkUserAnswer(1, currentRowToCheck, correctAnswer))
+                    goodAnswerCounter++;
                 break;
             case 2:
-                goodAnswerCounter++;
+                if (checkUserAnswer(2, currentRowToCheck, correctAnswer))
+                    goodAnswerCounter++;
                 break;
             case 3:
+                if (checkUserAnswer(3, currentRowToCheck, correctAnswer))
+                    goodAnswerCounter++;
                 break;
             case 4:
+                if (checkUserAnswer(4, currentRowToCheck, correctAnswer))
+                    goodAnswerCounter++;
                 break;
             default:
+                System.out.println("Enter the number of correct answer!");
                 break;
         }
     }
