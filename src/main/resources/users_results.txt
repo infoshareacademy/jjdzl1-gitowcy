@@ -1,1 +1,5 @@
-Kamil: 5/5
+Kamil: 5/5, PHP
+Mike: 3/5, HTML
+Adrian: 5/5, Java
+Marcin: 3/10, PHP
+Boris: 0/9, HTML

@@ -6,7 +6,10 @@ import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
+import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.quizName;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showMainMenu;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
@@ -90,7 +93,7 @@ public class Quiz {
     public static void printUserResult(int quizLength) {
         clearScreen();
         System.out.println("Quiz was ended. Here you have your score.");
-        userResultsToSave = userName + ": " + goodAnswerCounter + "/" + quizLength;
+        userResultsToSave = userName + ": " + goodAnswerCounter + "/" + quizLength + ", " + quizName;
 
         System.out.println(userResultsToSave);
         saveUserResultToFile(userResultsToSave);
@@ -152,10 +155,16 @@ public class Quiz {
             resultToSave.write(userResultsToSave);
             resultToSave.write("\n");
             resultToSave.close();
-            System.out.println("Your score was successfully saved");
+            System.out.println("Your score was successfully saved.");
+            TimeUnit.SECONDS.sleep(3);
         } catch (IOException e) {
             System.out.println("Something went wrong. We were unable to save your score...");
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            clearScreen();
+            showMainMenu();
         }
     }
 }

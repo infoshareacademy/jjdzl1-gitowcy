@@ -38,7 +38,6 @@ public class UserChoice {
                 showMainMenu();
             } else {
                 clearScreen();
-                //printQuizHeader();
                 searchFileByName();
             }
 
