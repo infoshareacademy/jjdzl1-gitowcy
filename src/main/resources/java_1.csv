@@ -1,6 +1,0 @@
-Question;Answer_1;Answer_2;Answer_3;Answer_4;Correct_Answer;No_Correct
-What of the following is the default value of a local variable?;null;0;Depends upon the type of variable;Not assigned;Not assigned;4
-What is a class in java?;Class is a special data type;Class is used to allocate memory to a data type;A class is a blue print from which individual object are created. A class can contain fields and methods to describe the behavior of an object;none of the answers;A class is a blue print from which individual object are created. A class can contain fields and methods to describe the behavior of an object;3
-What is correct syntax for main method of a java class? ;public static int main(String[] args) ;public static void main(String[] args) ;none of the answers;public static int main(String[] args) ;public static void main(String[] args) ;2
-What is the size of double variable? ;64 bit ;32 bit ;8 bit ;16 bit ;64 bit ;1
-What is the default value of double variable? ;0.0f ;0.0d ;0;Not defined;0.0d ;2

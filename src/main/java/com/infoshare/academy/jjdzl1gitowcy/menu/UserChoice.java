@@ -1,14 +1,14 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz;
-
 import java.util.Scanner;
 
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
-import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.*;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 import static java.lang.System.exit;
+import static java.lang.System.in;
 
 public class UserChoice {
 
@@ -31,7 +31,6 @@ public class UserChoice {
             }
 
         } else if (fromWhatMenu == 5) {
-
 
             System.out.print("Your name/nick: ");
             userName = scanner.next();
@@ -89,7 +88,8 @@ public class UserChoice {
                     showQuizStartMenu(userChoice);
                 } else if (fromWhatMenu == 4) {
                     clearScreen();
-                    showMainMenu();
+
+                    getTheTestLevel(userChoice);
                 }
                 break;
             case "4":
@@ -99,6 +99,9 @@ public class UserChoice {
                     System.out.println();
                     showMainMenu();
                 } else if (fromWhatMenu == 2) {
+                    clearScreen();
+                    showMainMenu();
+                } else if (fromWhatMenu == 4) {
                     clearScreen();
                     showMainMenu();
                 }
