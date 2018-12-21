@@ -1,5 +1,5 @@
 Question;Answer_1;Answer_2;Answer_3;Answer_4;Correct_Answer
-What does the "end()" function do?; Sets the file pointer to its end; Takes an array as an parameter and returns its last element; Ends the execution of the php script; there is no such function in php; Takes an array as an parameter and returns its last element
+What does the "end()" function do?; Sets the file pointer to its end; Takes an array as an parameter and returns its last element; Ends the execution of the php script; There is no such function in php; Takes an array as an parameter and returns its last element
 How do we define predefined variables?; It is impoossible to define predefined variables; Differently; define(string,VARIABLE); #define; define(string,VARIABLE)
 Can you configure the maximal size of data transferred by POST in the "php.ini" file?; Yes; None of the answers is true; No, if we use php 5.x; No; Yes
 Can you use the "__construct()" constructor as a constructor in PHP 5.x?; No, if you have not set up php.ini correctly before; None of the answers is true; Yes; No; Yes

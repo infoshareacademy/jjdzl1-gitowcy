@@ -17,3 +17,12 @@ Waldek: 2/10, PHP
 kamil: 0/5, Java
 kamil: 1/1, Java
 null: 2/10, 
+null: 0/1, 
+gggggggggggg: 2/10, PHP
+hhhhhhhhhhh: 0/5, Java
+jjjjjjjjjjjj: 0/5, Java
+jjjjjjjjjj: 10/10, HTML
+hhhhhhhhhh: 10/10, PHP
+ggggggg: 9/10, PHP
+kkkkkk: 10/10, PHP
+bandyta: 8/10, HTML

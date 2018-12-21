@@ -1,11 +1,11 @@
 Question;Answer_1;Answer_2;Answer_3;Answer_4;Correct_Answer
-What does the end() function do?; sets the file pointer to its end; takes an array as an parameter and returns its last element; ends the execution of the php script; there is no such function in php; takes an array as an parameter and returns its last element
-How do we define predefined variables?; you can not define predefined variables; differently; define (string, VARIABLE); #define;  define (string, VARIABLE)
-Can you configure the maximal size of data transferred by POST in the php.ini file?; Yes; none of the answers is true; No, if we use php 5.x; No; Yes
-Can you use the __construct() constructor as a constructor in PHP 5.x?; No, if you have not set up php.ini correctly before; none of the answers is true; Yes; No; Yes
-What argument of $_SERVER variable will allow us to specify the IP from which the given script is executed?; DOCUMENT_ROOT; REMOTE_ADDR; SERVER_ADDR; HTTP_CONNECTION; SERVER_ADDR
-Passing a class as a function parameter, is valid for ... (PHP 5.x); copy; you can not pass a class as a function parameter; reference; indicator; copy
-What function will convert &, <, > to &amp, &lt, &gt?; htmlspecialchars(); addslashes(); mysql_escape_string(); stripslashes(); htmlspecialchars()
-What arguments does the pg_connect() function take?; (String); (Float, array); (Boolean); (Int, int, int); (String)
-What arguments does the implode() function take? ; (Int, int); (Int); no; (String, array); (String, array)
-Function print_r() works only for:; there is no such function; int type variables; tables; all variables; all variables
+Function "mktime()" returns the time equal to the Unix equivalent of the date counted from ...:; June 21, 1971; January 1, 1970; January 1, 1960; December 31, 1969; January 1, 1970
+What does the "MVC" abbreviation mean?; Model View Controller; Motion Disk Vault; Minimal Data Validate; Mini Divi Vivi; Model View Controller
+Is the use of the "abstract" directive available in PHP technology?; you can not create classes in PHP; No, if it is version 5.x or newer; No; Yes, if it is version 5.x or newer; Yes, if it is version 5.x or newer
+What happens to an open database connection "(mysql_connect ())" after finishing the script?; It remains open; Nothing; A fatal error will occur if the connection is not corrupted before the script is finished; The connection is closed automatically; The connection is closed automatically
+How much does a full PHP license cost?; $ 9; $ 99; $ 999; It's free; It's free
+What does the "@" character in front of the function mean to?; You can not use this character before the function; The function will be performed regardless of other critical errors; The function will not be executed; If "NOTICE" occurs, it will not be displayed; If "NOTICE" occurs, it will not be displayed
+In which year was the first version of PHP released?; December 1998; November 1996; October 1999; October 1997; October 1997
+What signs should be used to start and end of each script in PHP?; Scripts start with the proper code; None of the answers is true; <html> </ html>; <? ?>; <? ?>
+Should any variable in PHP be declared?; Yes, if we want to declare a variable in the class; No; Yes; Not if the variable is an array; No
+Which of the given structures will NOT write the word "test"?; echo "test"; echo 'test'; echo $text = "test"; @echo "test"; echo 'test'

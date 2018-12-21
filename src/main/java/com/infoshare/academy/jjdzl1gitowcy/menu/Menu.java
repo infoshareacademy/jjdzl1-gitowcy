@@ -8,6 +8,8 @@ public class Menu {
 
     //The path to the CSV file chosen after test type question
     public static String pathToCSV;
+    public static String levelName;
+
 
     //This is var(flag) that tells us which menu the UserChoice.userChoice method was called from
     public static int fromWhatMenu = 0;
@@ -85,7 +87,7 @@ public class Menu {
     }
 
     public static void getTheTestLevel(String chosenLevel) {
-        String levelName = "";
+//        String levelName = "";
         String levelType = "";
 
         if (pathToCSV.toLowerCase().contains("java")) {
