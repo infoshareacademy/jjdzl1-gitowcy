@@ -14,4 +14,6 @@ Mikołaj: 1/5, Java
 kamil: 1/1, Java
 kamil: 0/5, Java
 Waldek: 2/10, PHP
-ggggggggggg: 6/10, PHP
+kamil: 0/5, Java
+kamil: 1/1, Java
+null: 2/10, 
