@@ -19,7 +19,7 @@ public class UserFile {
         int fileNameNumber = numberOfFilesInResources + 1;
 
         File userFile = new File(filepath);
-        String destination = "src/main/resources/" + typeOfQuizLanguage + "_" + fileNameNumber + ".csv";
+        String destination = "src/main/resources/users_quiz/" + typeOfQuizLanguage + "_" + fileNameNumber + ".csv";
         File fileToSave = new File(destination);
 
         try {
@@ -39,7 +39,7 @@ public class UserFile {
 
     public static int numberOfFilesInDirectory() {
 
-        String resourcesPath = "src/main/resources";
+        String resourcesPath = "src/main/resources/users_quiz/";
         File directory = new File(resourcesPath);
 
         return directory.list().length;
