@@ -66,7 +66,6 @@ public class Menu {
             System.out.println("Hmm, we don't have this choice. Try again...");
         }
 
-        //fromWhatMenu = 5;
         clearScreen();
         showTestLevelMenu();
     }
