@@ -19,7 +19,7 @@ public class UserFile {
         int fileNameNumber = numberOfFilesInResources + 1;
 
         File userFile = new File(filepath);
-        String destination = "src/main/resources/" + typeOfQuizLanguage + "_" + fileNameNumber + ".csv";
+        String destination = "src/main/resources/users_quiz/" + typeOfQuizLanguage + "_" + fileNameNumber + ".csv";
         File fileToSave = new File(destination);
 
         try {
