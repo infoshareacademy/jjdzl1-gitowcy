@@ -24,11 +24,10 @@ public class Quiz {
     public static String correctAnswer;
     public static List<String[]> quizLines = null;
     public static String[] currentRowToCheck;
+    public static String quizFilePath;
 
-    public static void loadQuiz() {
+    public static void loadFileQuiz(File quizFile) {
 
-        String quizFilePath = pathToCSV;
-        File quizFile = new File(quizFilePath);
         CSVReader readQuiz = null;
 
         try {
@@ -36,10 +35,28 @@ public class Quiz {
             quizLines = readQuiz.readAll();
             printQuiz(quizLines);
         } catch (FileNotFoundException e) {
+            System.out.println("Something went wrong. We don't have this quiz file now...");
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Something went wrong. We can't load quiz file now...");
             e.printStackTrace();
         }
+    }
+
+    public static void loadQuiz() {
+
+        quizFilePath = pathToCSV;
+        File quizFile = new File(quizFilePath);
+
+        loadFileQuiz(quizFile);
+    }
+
+    public static void loadUsersQuiz(String quizNameFile) {
+
+        quizFilePath = "src/main/resources/users_quiz/" + quizNameFile;
+        File quizFile = new File(quizFilePath);
+
+        loadFileQuiz(quizFile);
     }
 
     public static void printQuiz(List<String[]> quiz) {
@@ -154,7 +171,8 @@ public class Quiz {
         int numberFromQuizListToSolve = scanner.nextInt();
 
         quizNameToSolve = listOfQuizzes[numberFromQuizListToSolve - 1];
-        loadQuiz();
+
+        loadUsersQuiz(quizNameToSolve);
     }
 
     public static void saveUserResultToFile(String userResultsToSave) {

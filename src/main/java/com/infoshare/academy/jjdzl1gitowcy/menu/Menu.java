@@ -1,7 +1,5 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager;
-
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
@@ -48,6 +46,18 @@ public class Menu {
 
         //Fourth level of menu
         fromWhatMenu = 4;
+        userChoice();
+    }
+
+    public static void showFromWhereQuizToSolve() {
+        System.out.println("-- CHOOSE WHAT TYPE OF QUIZ YOU WANT TO SOLVE ---");
+        System.out.println("1 - Quiz from us");
+        System.out.println("2 - Quiz from users");
+        System.out.println("3 - Back to Main Menu");
+        System.out.println("Q - Exit the program");
+
+        //Sixth level of menu
+        fromWhatMenu = 6;
         userChoice();
     }
 
