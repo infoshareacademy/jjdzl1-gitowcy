@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.quizName;
-import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showMainMenu;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputNumbers;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.*;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
@@ -27,7 +27,7 @@ public class Quiz {
 
     public static void loadQuiz() {
 
-        String quizFilePath = "src/main/resources/" + quizNameToSolve;
+        String quizFilePath = pathToCSV;
         File quizFile = new File(quizFilePath);
         CSVReader readQuiz = null;
 
@@ -76,10 +76,9 @@ public class Quiz {
 
     public static void getAnswerFromUser() {
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter the number of answer: ");
-        int userAnswer = scanner.nextInt();
+        int userAnswer = inputNumbers(1, 4);
 
         switch (userAnswer) {
             case 1:
@@ -116,7 +115,7 @@ public class Quiz {
     public static void searchFileByName() {
 
         String quizName = Menu.quizName.toLowerCase();
-        String directory = "src/main/resources";
+        String directory = "src/main/resources/users_quiz";
         File dir = new File(directory);
         FilenameFilter filter = new FilenameFilter() {
             @Override

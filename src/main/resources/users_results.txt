@@ -12,3 +12,5 @@ Kamil: 7/10, HTML
 Adrian: 8/10, HTML
 Mikołaj: 1/5, Java
 kamil: 1/1, Java
+kamil: 0/5, Java
+Waldek: 2/10, PHP
