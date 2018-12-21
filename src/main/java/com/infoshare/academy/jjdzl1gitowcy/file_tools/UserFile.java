@@ -39,7 +39,7 @@ public class UserFile {
 
     public static int numberOfFilesInDirectory() {
 
-        String resourcesPath = "src/main/resources";
+        String resourcesPath = "src/main/resources/users_quiz/";
         File directory = new File(resourcesPath);
 
         return directory.list().length;
