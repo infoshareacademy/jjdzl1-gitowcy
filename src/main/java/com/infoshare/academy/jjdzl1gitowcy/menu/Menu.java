@@ -1,6 +1,8 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
+import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class Menu {
@@ -9,11 +11,24 @@ public class Menu {
     //The path to the CSV file chosen after test type question
     public static String pathToCSV;
     public static String levelName;
+    public static Boolean isUserLogged;
+
 
 
     //This is var(flag) that tells us which menu the UserChoice.userChoice method was called from
     public static int fromWhatMenu = 0;
     public static String quizName = "";
+
+    public static void showLoginMenu() {
+        System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
+        System.out.println("1 - Log in to the existed account");
+        System.out.println("2 - Play as the temporary user");
+        System.out.println("Q - Exit the program");
+
+        //Ten level of menu
+        fromWhatMenu = 10;
+        userChoice();
+    }
 
     public static void showMainMenu() {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
@@ -94,7 +109,7 @@ public class Menu {
             levelType = "JAVA";
         } else if (pathToCSV.toLowerCase().contains("php")) {
             levelType = "PHP";
-        } else  if (pathToCSV.toLowerCase().contains("html")) {
+        } else if (pathToCSV.toLowerCase().contains("html")) {
             levelType = "HTML";
         }
 
@@ -109,9 +124,15 @@ public class Menu {
             pathToCSV = pathToCSV + levelName + ".csv";
         }
 
-        System.out.println("You coose " + levelType + " quiz with level " + chosenLevel + ". GoodLuck!");
-        System.out.println("Enter your name/nick below to assign your quiz score to it");
-        System.out.println("Q - Back to Main Menu");
+        if (!isUserLogged) {
+            System.out.println("You coose " + levelType + " quiz with level " + chosenLevel + ". Good luck!");
+            System.out.println("Enter your name/nick below to assign your quiz score to it");
+            System.out.println("Q - Back to Main Menu");
+        } else {
+            System.out.println("You coose " + levelType + " quiz with level " + chosenLevel);
+            System.out.println("Good luck " + userLoggedName + "!");
+            System.out.println("Q - Back to Main Menu");
+        }
 
         //Fifth level of menu
 

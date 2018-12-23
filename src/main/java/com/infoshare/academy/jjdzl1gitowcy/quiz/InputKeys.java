@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InputKeys {
 
-    protected static Integer inputNumbers(int min, int max) {
+    public static Integer inputNumbers(int min, int max) {
         String input$ = "";
         int notEmptyMarker = -1;
         int correctNumber = -1;
@@ -27,7 +27,7 @@ public class InputKeys {
                 System.out.println("The entered number can not be an empty set! ");
             }
             if (correctNumber < min || correctNumber > max) {
-                System.out.println("Please, enter the Integer from 1 to 4");
+                System.out.printf("Please, enter the Integer from %s to %s %n",min,max);
             } else {
                 isInputNotEmpty = notEmptyMarker == 0 ? false : true;
             }
@@ -35,8 +35,7 @@ public class InputKeys {
         return correctNumber;
     }
 
-
-    protected static String inputStrings() {
+    public static String inputStrings() {
         String input$ = "";
         int notEmptyMarker = -1;
         Boolean isInputNotEmpty = false;

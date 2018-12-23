@@ -1,8 +1,9 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
+import com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn;
 import java.util.Scanner;
-
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
+import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
@@ -30,7 +31,7 @@ public class UserChoice {
                 addFileFromUser(filepath);
             }
 
-        } else if (fromWhatMenu == 5) {
+        } else if (fromWhatMenu == 5 && !isUserLogged) {
 
             System.out.print("Your name/nick: ");
             userName = scanner.next();
@@ -43,7 +44,26 @@ public class UserChoice {
                 printQuizHeader();
             }
 
-        } else {
+        }
+
+        else if (fromWhatMenu == 5 && isUserLogged) {
+
+            System.out.println("Your name/nick is: " +userLoggedName);
+            System.out.println("If you want to quit press (Q), or any else key if you want to solve the test");
+
+            String menuChoice = scanner.next();
+
+            if (menuChoice.equals("q") || menuChoice.equals("Q")) {
+                clearScreen();
+                showMainMenu();
+            } else {
+                clearScreen();
+                printQuizHeader();
+            }
+        }
+
+
+        else {
             System.out.print("Your choice: ");
             String userChoice = scanner.next();
             userMenuChoice(userChoice);
@@ -66,6 +86,9 @@ public class UserChoice {
                 } else if (fromWhatMenu == 6) {
                     clearScreen();
                     showQuizMenu();
+                } else if (fromWhatMenu == 10) {
+                    clearScreen();
+                    LogIn.run();
                 }
                 break;
             case "2":
@@ -81,6 +104,10 @@ public class UserChoice {
                 } else if (fromWhatMenu == 6) {
                     clearScreen();
                     searchFileByName();
+                }else if (fromWhatMenu == 10) {
+                    isUserLogged=false;
+                    clearScreen();
+                    showMainMenu();
                 }
                 break;
             case "3":

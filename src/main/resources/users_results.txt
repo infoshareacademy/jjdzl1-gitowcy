@@ -26,3 +26,7 @@ hhhhhhhhhh: 10/10, PHP
 ggggggg: 9/10, PHP
 kkkkkk: 10/10, PHP
 bandyta: 8/10, HTML
+jedrek: 0/5, Java
+jedrek: 6/10, PHP
+gffgdf: 3/10, PHP
+null: 7/10, PHP
