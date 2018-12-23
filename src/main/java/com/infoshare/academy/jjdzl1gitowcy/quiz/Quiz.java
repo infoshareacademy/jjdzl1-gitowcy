@@ -1,10 +1,14 @@
 package com.infoshare.academy.jjdzl1gitowcy.quiz;
 
 import au.com.bytecode.opencsv.CSVReader;
+
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -25,6 +29,7 @@ public class Quiz {
     public static List<String[]> quizLines = null;
     public static String[] currentRowToCheck;
     public static String quizFilePath;
+
 
     public static void loadFileQuiz(File quizFile) {
 
@@ -68,7 +73,8 @@ public class Quiz {
 
             printQuestion = false;
             clearScreen();
-            currentRowToCheck = row;
+
+            currentRowToCheck = AnswerOrderGenerator.newOrderOfQuestions(row);
 
             for (int i = 0; i < row.length - 1; i++) {
 
@@ -95,6 +101,8 @@ public class Quiz {
 
         System.out.println();
         System.out.print("Enter the number of answer: ");
+
+
         int userAnswer = inputNumbers(1, 4);
 
         switch (userAnswer) {
@@ -118,6 +126,7 @@ public class Quiz {
                 System.out.println("Enter the number of correct answer!");
                 break;
         }
+
     }
 
     public static void printUserResult(int quizLength) {
@@ -177,6 +186,11 @@ public class Quiz {
 
     public static void saveUserResultToFile(String userResultsToSave) {
 
+        Date dNow = new Date();
+        SimpleDateFormat ft =
+                new SimpleDateFormat("dd_MM_yyyy");
+        String todayDate = ft.format(dNow);
+        String resultDataToSave = String.format("%s_%s_%s_%s", userName, quizName, levelName, todayDate);
         String destToSave = "src/main/resources/users_results.txt";
         File file = new File(destToSave);
         FileWriter resultToSave = null;

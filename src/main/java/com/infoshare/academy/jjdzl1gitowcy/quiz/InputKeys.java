@@ -4,17 +4,14 @@ import java.util.Scanner;
 
 public class InputKeys {
 
-    protected static Integer inputNumbers(int min, int max) {
-
+    public static Integer inputNumbers(int min, int max) {
         String input$ = "";
         int notEmptyMarker = -1;
         int correctNumber = -1;
         Boolean isInputNotEmpty = false;
-
         while (!isInputNotEmpty) {
             boolean isNumber = false;
-            correctNumber = -1;
-
+            correctNumber = Integer.MIN_VALUE;
             while (!isNumber) {
                 try {
                     Scanner choice = new Scanner(System.in);
@@ -22,23 +19,23 @@ public class InputKeys {
                     notEmptyMarker = input$.length();
                     correctNumber = Integer.parseInt(input$);
                 } catch (NumberFormatException n) {
-                    System.out.print("Incorrect data! Enter the number of answer again: ");
+                    System.out.println("Incorrect data dane! Input the number once again: ");
                 }
-                if (correctNumber >= min && correctNumber <= max) {
-                    isNumber = correctNumber == -1 ? false : true;
-                } else {
-                    System.out.print("Number out of range (" + min + " - " + max + "). Type number once again: ");
-                }
-                if (notEmptyMarker < 1) {
-                    System.out.println("Again! The entered number can not be an empty set");
-                }
+                isNumber = correctNumber == Integer.MIN_VALUE ? false : true;
+            }
+            if (notEmptyMarker < 1) {
+                System.out.println("The entered number can not be an empty set! ");
+            }
+            if (correctNumber < min || correctNumber > max) {
+                System.out.printf("Please, enter the Integer from %s to %s %n",min,max);
+            } else {
                 isInputNotEmpty = notEmptyMarker == 0 ? false : true;
             }
         }
         return correctNumber;
     }
 
-    protected static String inputStrings() {
+    public static String inputStrings() {
         String input$ = "";
         int notEmptyMarker = -1;
         Boolean isInputNotEmpty = false;
