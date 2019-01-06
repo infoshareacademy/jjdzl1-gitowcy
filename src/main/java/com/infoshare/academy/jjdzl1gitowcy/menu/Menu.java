@@ -35,6 +35,8 @@ public class Menu {
         System.out.println("1 - Solve a Quiz");
         System.out.println("2 - Add a Quiz");
         System.out.println("Q - Exit the program");
+        if (isUserLogged){
+            System.out.println("L - Log out user: "+userLoggedName);}
 
         //First level of menu
         fromWhatMenu = 1;
@@ -48,6 +50,8 @@ public class Menu {
         System.out.println("3 - HTML");
         System.out.println("4 - Back to Main Menu");
         System.out.println("Q - Exit the program");
+        if (isUserLogged){
+            System.out.println("L - Log out user: "+userLoggedName);}
 
         //Second level of menu
         fromWhatMenu = 2;
@@ -61,8 +65,9 @@ public class Menu {
         System.out.println("2 - Medium level");
         System.out.println("3 - Hard level");
         System.out.println("4 - Back to Main Menu");
-
         System.out.println("Q - Exit the program");
+        if (isUserLogged){
+            System.out.println("L - Log out user: "+userLoggedName);}
 
         //Fourth level of menu
         fromWhatMenu = 4;
@@ -75,6 +80,8 @@ public class Menu {
         System.out.println("2 - Quiz from users");
         System.out.println("3 - Back to Main Menu");
         System.out.println("Q - Exit the program");
+        if (isUserLogged){
+            System.out.println("L - Log out user: "+userLoggedName);}
 
         //Sixth level of menu
         fromWhatMenu = 6;
@@ -129,9 +136,11 @@ public class Menu {
             System.out.println("Enter your name/nick below to assign your quiz score to it");
             System.out.println("Q - Back to Main Menu");
         } else {
-            System.out.println("You coose " + levelType + " quiz with level " + chosenLevel);
-            System.out.println("Good luck " + userLoggedName + "!");
-            System.out.println("Q - Back to Main Menu");
+            System.out.print("You coose " + levelType + " quiz with level " + chosenLevel);
+//            System.out.println("Good luck " + userLoggedName + "!");
+//            System.out.println("Q - Back to Main Menu");
+//            if (isUserLogged){
+//                System.out.println("L - Log out");}
         }
 
         //Fifth level of menu

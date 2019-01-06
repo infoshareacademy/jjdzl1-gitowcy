@@ -3,7 +3,10 @@ package com.infoshare.academy.jjdzl1gitowcy.input.output;
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
 import com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys;
 //import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
+import java.util.concurrent.TimeUnit;
+
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.pressAnyKeyToContinue;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class LogIn {
@@ -54,7 +57,13 @@ public static String userLoggedName;
                 if (inputPass.equals(userData[1])) {
                     clearScreen();
                     System.out.printf("OK %s. You've logged in successfully! %n", inpUser);
+                    try {
+                        TimeUnit.SECONDS.sleep(2);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     isLoginOK = true;
+                    clearScreen();
                     userLoggedName=userData[0];
                     isUserLogged=true;
                 } else {

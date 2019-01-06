@@ -30,3 +30,7 @@ jedrek: 0/5, Java
 jedrek: 6/10, PHP
 gffgdf: 3/10, PHP
 null: 7/10, PHP
+null: 0/5, Java
+null: 0/5, Java
+null: 3/10, PHP
+null: 0/1, 

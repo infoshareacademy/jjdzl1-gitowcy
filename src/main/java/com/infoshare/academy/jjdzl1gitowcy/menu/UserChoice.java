@@ -1,7 +1,10 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
 import com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn;
+import com.infoshare.academy.jjdzl1gitowcy.input.output.LogOut;
+
 import java.util.Scanner;
+
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
 import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
@@ -44,11 +47,9 @@ public class UserChoice {
                 printQuizHeader();
             }
 
-        }
+        } else if (fromWhatMenu == 5 && isUserLogged) {
 
-        else if (fromWhatMenu == 5 && isUserLogged) {
-
-            System.out.println("Your name/nick is: " +userLoggedName);
+            System.out.println("Your name/nick is: " + userLoggedName);
             System.out.println("If you want to quit press (Q), or any else key if you want to solve the test");
 
             String menuChoice = scanner.next();
@@ -60,10 +61,7 @@ public class UserChoice {
                 clearScreen();
                 printQuizHeader();
             }
-        }
-
-
-        else {
+        } else {
             System.out.print("Your choice: ");
             String userChoice = scanner.next();
             userMenuChoice(userChoice);
@@ -73,6 +71,16 @@ public class UserChoice {
     public static void userMenuChoice(String userChoice) {
 
         switch (userChoice) {
+
+            case "L":
+                clearScreen();
+                LogOut.outLog();
+                break;
+            case "l":
+                clearScreen();
+                LogOut.outLog();
+                break;
+
             case "1":
                 if (fromWhatMenu == 1) {
                     clearScreen();
@@ -104,8 +112,8 @@ public class UserChoice {
                 } else if (fromWhatMenu == 6) {
                     clearScreen();
                     searchFileByName();
-                }else if (fromWhatMenu == 10) {
-                    isUserLogged=false;
+                } else if (fromWhatMenu == 10) {
+                    isUserLogged = false;
                     clearScreen();
                     showMainMenu();
                 }

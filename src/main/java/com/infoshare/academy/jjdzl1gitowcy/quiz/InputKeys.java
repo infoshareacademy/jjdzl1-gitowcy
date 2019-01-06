@@ -2,6 +2,8 @@ package com.infoshare.academy.jjdzl1gitowcy.quiz;
 
 import java.util.Scanner;
 
+import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+
 public class InputKeys {
 
     public static Integer inputNumbers(int min, int max) {
@@ -52,4 +54,18 @@ public class InputKeys {
         }
         return input$;
     }
+
+    public static void pressAnyKeyToContinue()
+    {
+        clearScreen();
+        System.out.println("Press Enter key to continue...");
+        try
+        {
+            System.in.read();
+        }
+        catch(Exception e)
+        {}
+    }
+
+
 }
