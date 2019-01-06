@@ -56,7 +56,7 @@ public static String userLoggedName;
 
                 if (inputPass.equals(userData[1])) {
                     clearScreen();
-                    System.out.printf("OK %s. You've logged in successfully! %n", inpUser);
+                    System.out.printf("OK %s. You've logged in successfully! %n \nWait a moment.", inpUser);
                     try {
                         TimeUnit.SECONDS.sleep(2);
                     } catch (InterruptedException e) {
