@@ -31,3 +31,10 @@ jedrek: 6/10, PHP
 gffgdf: 3/10, PHP
 null: 7/10, PHP
 null: 0/5, Java
+<<<<<<< HEAD
+=======
+null: 0/5, Java
+null: 3/10, PHP
+null: 0/1, 
+null: 0/5, 
+>>>>>>> 1e3d03f51088c3f8f1d4eb7694c9e6a4362d9c96
