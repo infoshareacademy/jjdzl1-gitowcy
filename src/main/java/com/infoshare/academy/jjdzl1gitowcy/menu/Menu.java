@@ -2,18 +2,14 @@ package com.infoshare.academy.jjdzl1gitowcy.menu;
 
 import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
-import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
 public class Menu {
-
 
     //The path to the CSV file chosen after test type question
     public static String pathToCSV;
     public static String levelName;
     public static Boolean isUserLogged;
-
-
 
     //This is var(flag) that tells us which menu the UserChoice.userChoice method was called from
     public static int fromWhatMenu = 0;
@@ -57,7 +53,6 @@ public class Menu {
         fromWhatMenu = 2;
         userChoice();
     }
-
 
     public static void showTestLevelMenu() {
         System.out.println("--- CHOOSE LEVEL OF THE QUIZ ---");

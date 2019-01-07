@@ -59,13 +59,11 @@ public class InputKeys {
     {
         clearScreen();
         System.out.println("Press Enter key to continue...");
-        try
-        {
+
+        try {
             System.in.read();
+        } catch(Exception e) {
+            e.printStackTrace();
         }
-        catch(Exception e)
-        {}
     }
-
-
 }

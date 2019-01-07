@@ -32,7 +32,6 @@ public class LogOut {
                 case "Y":
                     logoutProcedure();
                     break;
-
                 case "b":
                     clearScreen();
                     showMainMenu();
@@ -41,7 +40,6 @@ public class LogOut {
                     clearScreen();
                     showMainMenu();
                     break;
-
                 default: {
                     clearScreen();
                     System.out.println("Hmm, we don't have this choice. Try again...");
@@ -50,13 +48,9 @@ public class LogOut {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     System.out.println();
                     outLog();
-
                 }
-
-
             }
         }
     }
@@ -68,15 +62,14 @@ public class LogOut {
         isUserLogged = false;
 
         System.out.println(loggedOutInfo);
+
         try {
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         pressAnyKeyToContinue();
         clearScreen();
         showLoginMenu();
-
     }
-
 }
