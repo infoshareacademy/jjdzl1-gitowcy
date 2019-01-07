@@ -22,12 +22,11 @@ public static String userLoggedName;
         String logProof2 = "failed. Left only";
         String logProof3 = "attempt";
 
-
         while (!isLoginOK && logCounter <= logProof) {
 
-            System.out.println("\nEnter the user NAME to find: ");
+            System.out.print("\nEnter the user NAME to find: ");
             inpUser = InputKeys.inputStrings();
-            System.out.println("Entered: " + inpUser);
+            System.out.print("Entered: " + inpUser);
 
             if (InputFile.getFromFile(inpUser) != null) {
                 checkUser = true;
@@ -48,12 +47,12 @@ public static String userLoggedName;
             if (checkUser) {
 
                 userData = InputFile.getFromFile(inpUser);
-                System.out.println("\nEnter the user PASSWORD to log in: ");
+                System.out.print("\nEnter the user PASSWORD to log in: ");
                 String inputPass = InputKeys.inputStrings();
 
                 if (inputPass.equals(userData[1])) {
                     clearScreen();
-                    System.out.printf("OK %s. You've logged in successfully! %n", inpUser);
+                    System.out.printf("OK %s. You've logged in successfully! %n\n", inpUser);
                     isLoginOK = true;
                     userLoggedName=userData[0];
                     isUserLogged=true;

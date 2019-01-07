@@ -3,6 +3,7 @@ package com.infoshare.academy.jjdzl1gitowcy.menu;
 import com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn;
 import java.util.Scanner;
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
+import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.run;
 import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
@@ -48,7 +49,7 @@ public class UserChoice {
 
         else if (fromWhatMenu == 5 && isUserLogged) {
 
-            System.out.println("Your name/nick is: " +userLoggedName);
+            System.out.println("Your name/nick is: " + userLoggedName);
             System.out.println("If you want to quit press (Q), or any else key if you want to solve the test");
 
             String menuChoice = scanner.next();
@@ -88,7 +89,7 @@ public class UserChoice {
                     showQuizMenu();
                 } else if (fromWhatMenu == 10) {
                     clearScreen();
-                    LogIn.run();
+                    run();
                 }
                 break;
             case "2":

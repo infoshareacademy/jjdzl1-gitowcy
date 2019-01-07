@@ -22,7 +22,7 @@ public class Menu {
     public static void showLoginMenu() {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
         System.out.println("1 - Log in to the existed account");
-        System.out.println("2 - Play as the temporary user");
+        System.out.println("2 - Play as the guest");
         System.out.println("Q - Exit the program");
 
         //Ten level of menu

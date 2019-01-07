@@ -187,8 +187,7 @@ public class Quiz {
     public static void saveUserResultToFile(String userResultsToSave) {
 
         Date dNow = new Date();
-        SimpleDateFormat ft =
-                new SimpleDateFormat("dd_MM_yyyy");
+        SimpleDateFormat ft = new SimpleDateFormat("dd_MM_yyyy");
         String todayDate = ft.format(dNow);
         String resultDataToSave = String.format("%s_%s_%s_%s", userName, quizName, levelName, todayDate);
         String destToSave = "src/main/resources/users_results.txt";
