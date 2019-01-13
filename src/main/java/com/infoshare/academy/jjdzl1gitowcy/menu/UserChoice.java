@@ -1,19 +1,17 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn;
-import com.infoshare.academy.jjdzl1gitowcy.input.output.LogOut;
+import com.infoshare.academy.jjdzl1gitowcy.user_controller.LogOut;
 
 import java.util.Scanner;
 
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
-import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.run;
-import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.run;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 import static java.lang.System.exit;
-import static java.lang.System.in;
 
 public class UserChoice {
 

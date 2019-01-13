@@ -1,4 +1,4 @@
-package com.infoshare.academy.jjdzl1gitowcy.input.output;
+package com.infoshare.academy.jjdzl1gitowcy.user_controller;
 
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
 import com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys;

@@ -1,6 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 
@@ -19,6 +19,7 @@ public class Menu {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
         System.out.println("1 - Log in to the existed account");
         System.out.println("2 - Play as the guest");
+        System.out.println("3 - ");
         System.out.println("Q - Exit the program");
 
         //Ten level of menu
@@ -72,7 +73,7 @@ public class Menu {
     public static void showFromWhereQuizToSolve() {
         System.out.println("-- CHOOSE WHAT TYPE OF QUIZ YOU WANT TO SOLVE ---");
         System.out.println("1 - Quiz from us");
-        System.out.println("2 - Quiz from users");
+        System.out.println("2 - Quiz from user_controller");
         System.out.println("3 - Back to Main Menu");
         System.out.println("Q - Exit the program");
         if (isUserLogged){

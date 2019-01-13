@@ -1,4 +1,4 @@
-package com.infoshare.academy.jjdzl1gitowcy.input.output;
+package com.infoshare.academy.jjdzl1gitowcy.user_controller;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class InputFile {
 
-    protected static String[] getFromFile(String inputToFind) {
+    public static String[] getFromFile(String inputToFind) {
 
         Boolean isUser = false;
         String csvFile = "src/main/resources/users_passwords.csv";
