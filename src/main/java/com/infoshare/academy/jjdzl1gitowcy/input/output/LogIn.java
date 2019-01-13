@@ -2,12 +2,13 @@ package com.infoshare.academy.jjdzl1gitowcy.input.output;
 
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
 import com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys;
-//import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
+
 import java.util.concurrent.TimeUnit;
 
-import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
-import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.pressAnyKeyToContinue;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.isUserLogged;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+
+//import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 
 public class LogIn {
 
