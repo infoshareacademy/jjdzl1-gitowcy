@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showLoginMenu;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getFromFile;
 
 public class UserRegistration {
 
@@ -17,6 +18,12 @@ public class UserRegistration {
 
         System.out.print("Enter login: ");
         String login = scanner.next();
+
+        while (!checkIfLoginExist(login)) {
+            System.out.println("This login is busy! Try with different login.\n");
+            System.out.print("Enter login: ");
+            login = scanner.next();
+        }
 
         System.out.print("Enter password: ");
         String password = scanner.next();
@@ -39,8 +46,8 @@ public class UserRegistration {
             fileWriter.write(accountToAdd);
             fileWriter.write("\n");
             fileWriter.close();
-            System.out.println("Your account was successfully create.");
-            System.out.println("Now you can login to program");
+            System.out.println("\nYour account was successfully create.");
+            System.out.println("Now you can login to program.");
             TimeUnit.SECONDS.sleep(3);
         } catch (IOException | InterruptedException e) {
             System.out.println("Something went wrong. We were unable to create your account...");
@@ -49,5 +56,19 @@ public class UserRegistration {
             clearScreen();
             showLoginMenu();
         }
+    }
+
+    public static boolean checkIfLoginExist(String login) {
+
+        Boolean isLoginExist = false;
+        String[] usersData = getFromFile(login);
+
+        if (usersData != null) {
+            isLoginExist = false;
+        } else {
+            isLoginExist = true;
+        }
+
+        return isLoginExist;
     }
 }

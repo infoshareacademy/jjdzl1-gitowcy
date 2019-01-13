@@ -64,7 +64,7 @@ public class Menu {
     public static void showFromWhereQuizToSolve() {
         System.out.println("-- CHOOSE WHAT TYPE OF QUIZ YOU WANT TO SOLVE ---");
         System.out.println("1 - Quiz from us");
-        System.out.println("2 - Quiz from user_controller");
+        System.out.println("2 - Quiz from users");
         System.out.println("3 - Back to Main Menu");
         System.out.println("Q - Exit the program");
         if (isUserLogged) {
