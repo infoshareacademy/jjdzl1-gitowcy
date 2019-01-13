@@ -41,6 +41,7 @@ public class InputKeys {
         String input$ = "";
         int notEmptyMarker = -1;
         Boolean isInputNotEmpty = false;
+
         while (!isInputNotEmpty) {
             {
                 Scanner choice = new Scanner(System.in);

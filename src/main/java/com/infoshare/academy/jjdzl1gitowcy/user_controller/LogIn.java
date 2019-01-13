@@ -6,7 +6,9 @@ import com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys;
 import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.isUserLogged;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputStrings;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getFromFile;
 
 //import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 
@@ -28,21 +30,18 @@ public static String userLoggedName;
 
         while (!isLoginOK && logCounter <= logProof) {
 
-            System.out.print("\nEnter the user NAME to find: ");
-            inpUser = InputKeys.inputStrings();
-            System.out.print("Entered: " + inpUser);
+            System.out.print("\nEnter login: ");
+            inpUser = inputStrings();
 
-            if (InputFile.getFromFile(inpUser) != null) {
+            if (getFromFile(inpUser) != null) {
                 checkUser = true;
-                System.out.printf("Welcome %s. User name is correct!", inpUser);
-
             } else {
                 checkUser = false;
                 if ((logProof - logCounter) > 1) {
-                    System.out.printf("Invalid user name! %n%s %s %s %s %ss!",
+                    System.out.printf("Invalid user name! %n %s %s %s %s %ss!",
                             logProofDesc, logCounter, logProof2, (logProof - logCounter), logProof3);
                 } else if ((logProof - logCounter) == 1) {
-                    System.out.printf("Invalid user name! %n%s %s %s %s %s!",
+                    System.out.printf("Invalid user name! %n %s %s %s %s %s!",
                             logProofDesc, logCounter, logProof2, (logProof - logCounter), logProof3);
                 }
                 logCounter++;
@@ -50,32 +49,28 @@ public static String userLoggedName;
 
             if (checkUser) {
 
-                userData = InputFile.getFromFile(inpUser);
-                System.out.print("\nEnter the user PASSWORD to log in: ");
-                String inputPass = InputKeys.inputStrings();
+                userData = getFromFile(inpUser);
+                System.out.print("\nEnter password: ");
+                String inputPass = inputStrings();
 
                 if (inputPass.equals(userData[1])) {
                     clearScreen();
-
-                    System.out.printf("OK %s. You've logged in successfully! %n\n", inpUser);
-
-                    System.out.printf("OK %s. You've logged in successfully! %n \nWait a moment.", inpUser);
+                    System.out.printf("Hello %s. You've logged in successfully! %n\n", inpUser);
                     try {
                         TimeUnit.SECONDS.sleep(2);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     isLoginOK = true;
                     clearScreen();
-                    userLoggedName=userData[0];
+                    userLoggedName = userData[0];
                     isUserLogged=true;
                 } else {
                     if ((logProof - logCounter) > 1) {
-                        System.out.printf("Invalid Password! %n%s %s %s %s %ss!",
+                        System.out.printf("Invalid Password! %n %s %s %s %s %s!",
                                 logProofDesc, logCounter, logProof2, (logProof - logCounter), logProof3);
                     } else if ((logProof - logCounter) == 1) {
-                        System.out.printf("Invalid Password! %n%s %s %s %s %s!",
+                        System.out.printf("Invalid Password! %n %s %s %s %s %s!",
                                 logProofDesc, logCounter, logProof2, (logProof - logCounter), logProof3);
                     }
                     logCounter++;
@@ -85,10 +80,10 @@ public static String userLoggedName;
         if ((logProof - logCounter) <= 0 && !isLoginOK) {
             clearScreen();
             System.out.println("The last login proof failed! Please, try to register a new user account.");
-            isUserLogged=false;
+            isUserLogged = false;
         }
 
-        userData = null;// Delete user data table from memory
+        userData = null; // Delete user data table from memory
         Menu.showMainMenu();
     }
 

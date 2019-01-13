@@ -13,7 +13,7 @@ public class InputFile {
     public static String[] getFromFile(String inputToFind) {
 
         Boolean isUser = false;
-        String csvFile = "src/main/resources/users_passwords.csv";
+        String csvFile = "src/main/resources/users.csv";
         String line = null;
         String csvSplitBy = "\\p{Punct}";// Lines splitted by "|" - POSIX character class
 
@@ -21,14 +21,12 @@ public class InputFile {
         String[] correctFileline = null;
         String[] correctFileline$ = null;
 
-        try (BufferedReader br
-                     = new BufferedReader(new FileReader(csvFile))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             while ((line = br.readLine()) != null) {
                 String[] lineOfFileData = line.split(csvSplitBy);
                 dataList.addAll(Collections.singleton(lineOfFileData));
             }
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -40,6 +38,7 @@ public class InputFile {
                 break;
             }
         }
+
         return correctFileline;
     }
 }

@@ -1,8 +1,8 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 
 public class Menu {
 
@@ -15,25 +15,14 @@ public class Menu {
     public static int fromWhatMenu = 0;
     public static String quizName = "";
 
-    public static void showLoginMenu() {
-        System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
-        System.out.println("1 - Log in to the existed account");
-        System.out.println("2 - Play as the guest");
-        System.out.println("3 - ");
-        System.out.println("Q - Exit the program");
-
-        //Ten level of menu
-        fromWhatMenu = 10;
-        userChoice();
-    }
-
     public static void showMainMenu() {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
         System.out.println("1 - Solve a Quiz");
         System.out.println("2 - Add a Quiz");
         System.out.println("Q - Exit the program");
-        if (isUserLogged){
-            System.out.println("L - Log out user: "+userLoggedName);}
+        if (isUserLogged) {
+            System.out.println("L - Log out user: " + userLoggedName);
+        }
 
         //First level of menu
         fromWhatMenu = 1;
@@ -47,8 +36,9 @@ public class Menu {
         System.out.println("3 - HTML");
         System.out.println("4 - Back to Main Menu");
         System.out.println("Q - Exit the program");
-        if (isUserLogged){
-            System.out.println("L - Log out user: "+userLoggedName);}
+        if (isUserLogged) {
+            System.out.println("L - Log out user: " + userLoggedName);
+        }
 
         //Second level of menu
         fromWhatMenu = 2;
@@ -62,8 +52,9 @@ public class Menu {
         System.out.println("3 - Hard level");
         System.out.println("4 - Back to Main Menu");
         System.out.println("Q - Exit the program");
-        if (isUserLogged){
-            System.out.println("L - Log out user: "+userLoggedName);}
+        if (isUserLogged) {
+            System.out.println("L - Log out user: " + userLoggedName);
+        }
 
         //Fourth level of menu
         fromWhatMenu = 4;
@@ -76,8 +67,9 @@ public class Menu {
         System.out.println("2 - Quiz from user_controller");
         System.out.println("3 - Back to Main Menu");
         System.out.println("Q - Exit the program");
-        if (isUserLogged){
-            System.out.println("L - Log out user: "+userLoggedName);}
+        if (isUserLogged) {
+            System.out.println("L - Log out user: " + userLoggedName);
+        }
 
         //Sixth level of menu
         fromWhatMenu = 6;
@@ -151,6 +143,28 @@ public class Menu {
 
         //Third level of menu
         fromWhatMenu = 3;
+        userChoice();
+    }
+
+    public static void showLoginMenu() {
+        System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
+        System.out.println("1 - Log in to the existed account");
+        System.out.println("2 - Play as the guest");
+        System.out.println("3 - Register the account");
+        System.out.println("Q - Exit the program");
+
+        //Ten level of menu
+        fromWhatMenu = 10;
+        userChoice();
+    }
+
+    public static void showRegisterMenu() {
+        System.out.println("-- REGISTER YOUR ACCOUNT--");
+        System.out.println("B - Back to Main Menu");
+        System.out.println("Q - Exit the program");
+
+        //Eleventh level of menu
+        fromWhatMenu = 11;
         userChoice();
     }
 }
