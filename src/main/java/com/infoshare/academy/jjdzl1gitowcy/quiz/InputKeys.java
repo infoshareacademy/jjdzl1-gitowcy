@@ -41,6 +41,7 @@ public class InputKeys {
         String input$ = "";
         int notEmptyMarker = -1;
         Boolean isInputNotEmpty = false;
+
         while (!isInputNotEmpty) {
             {
                 Scanner choice = new Scanner(System.in);
@@ -59,13 +60,11 @@ public class InputKeys {
     {
         clearScreen();
         System.out.println("Press Enter key to continue...");
-        try
-        {
+
+        try {
             System.in.read();
+        } catch(Exception e) {
+            e.printStackTrace();
         }
-        catch(Exception e)
-        {}
     }
-
-
 }

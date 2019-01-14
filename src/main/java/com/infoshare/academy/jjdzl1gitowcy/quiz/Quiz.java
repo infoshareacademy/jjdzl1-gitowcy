@@ -3,6 +3,7 @@ package com.infoshare.academy.jjdzl1gitowcy.quiz;
 import au.com.bytecode.opencsv.CSVReader;
 
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
+import com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -19,6 +20,7 @@ import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputNumbers;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.*;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 
 public class Quiz {
 
@@ -134,6 +136,7 @@ public class Quiz {
     public static void printUserResult(int quizLength) {
         clearScreen();
         System.out.println("Quiz was ended. Here you have your score.");
+        userResultsToSave = userLoggedName + ": " + goodAnswerCounter + "/" + quizLength + ", " + quizName;
 
         if (isUserLogged) {
 
@@ -158,12 +161,7 @@ public class Quiz {
         String quizName = Menu.quizName.toLowerCase();
         String directory = "src/main/resources/users_quiz";
         File dir = new File(directory);
-        FilenameFilter filter = new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return name.startsWith(quizName);
-            }
-        };
+        FilenameFilter filter = (dir1, name) -> name.startsWith(quizName);
 
         listOfQuizzes = dir.list(filter);
         numberOfQuizzes = listOfQuizzes.length;
@@ -201,17 +199,22 @@ public class Quiz {
 
     public static void saveUserResultToFile(String userResultsToSave) {
 
-
+        Date dNow = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("dd_MM_yyyy");
+        String todayDate = ft.format(dNow);
+        //String resultDataToSave = String.format("%s_%s_%s_%s", userName, quizName, levelName, todayDate);
+        String resultDataToSave = userResultsToSave;
         String destToSave = "src/main/resources/users_results.txt";
         File file = new File(destToSave);
         FileWriter resultToSave = null;
 
         try {
             resultToSave = new FileWriter(file, true);
-            resultToSave.write(userResultsToSave);
+            resultToSave.write(resultDataToSave);
             resultToSave.write("\n");
             resultToSave.close();
             System.out.println("Your score was successfully saved.");
+            System.out.println();
             TimeUnit.SECONDS.sleep(3);
         } catch (IOException e) {
             System.out.println("Something went wrong. We were unable to save your score...");

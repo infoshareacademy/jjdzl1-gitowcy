@@ -1,22 +1,21 @@
 package com.infoshare.academy.jjdzl1gitowcy.menu;
 
-import com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn;
-import com.infoshare.academy.jjdzl1gitowcy.input.output.LogOut;
-
 import java.util.Scanner;
 
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
-import static com.infoshare.academy.jjdzl1gitowcy.input.output.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.logIn;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogOut.outLog;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.UserRegistration.registration;
 import static java.lang.System.exit;
-import static java.lang.System.in;
 
 public class UserChoice {
 
-    public static String userName;
+    public static String userName = userLoggedName;
 
     public static void userChoice() {
 
@@ -61,6 +60,8 @@ public class UserChoice {
                 clearScreen();
                 printQuizHeader();
             }
+        } else if (fromWhatMenu == 11) {
+            registration();
         } else {
             System.out.print("Your choice: ");
             String userChoice = scanner.next();
@@ -74,11 +75,11 @@ public class UserChoice {
 
             case "L":
                 clearScreen();
-                LogOut.outLog();
+                outLog();
                 break;
             case "l":
                 clearScreen();
-                LogOut.outLog();
+                outLog();
                 break;
 
             case "1":
@@ -96,7 +97,7 @@ public class UserChoice {
                     showQuizMenu();
                 } else if (fromWhatMenu == 10) {
                     clearScreen();
-                    LogIn.run();
+                    logIn();
                 }
                 break;
             case "2":
@@ -129,11 +130,13 @@ public class UserChoice {
                     showQuizStartMenu(userChoice);
                 } else if (fromWhatMenu == 4) {
                     clearScreen();
-
                     getTheTestLevel(userChoice);
                 } else if (fromWhatMenu == 6) {
                     clearScreen();
                     showMainMenu();
+                } else if (fromWhatMenu == 10) {
+                    clearScreen();
+                    showRegisterMenu();
                 }
                 break;
             case "4":

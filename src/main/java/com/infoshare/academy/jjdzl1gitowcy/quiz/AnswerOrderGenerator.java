@@ -1,6 +1,8 @@
 package com.infoshare.academy.jjdzl1gitowcy.quiz;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class AnswerOrderGenerator {
 
