@@ -9,11 +9,13 @@ import java.util.concurrent.TimeUnit;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showLoginMenu;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getFromFile;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.numberOfUsers;
 
 public class UserRegistration {
 
     public static void registration() {
 
+        Integer userId = 0;
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter login: ");
@@ -28,7 +30,8 @@ public class UserRegistration {
         System.out.print("Enter password: ");
         String password = scanner.next();
 
-        String accountToAdd = login + "|" + password;
+        userId = numberOfUsers + 1;
+        String accountToAdd = login + "|" + password + "|" + userId;
 
         if (!accountToAdd.equals("|")) {
             saveAccountToFile(accountToAdd);

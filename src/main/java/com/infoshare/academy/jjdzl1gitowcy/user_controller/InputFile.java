@@ -10,6 +10,8 @@ import java.util.List;
 
 public class InputFile {
 
+    public static Integer numberOfUsers;
+
     public static String[] getFromFile(String inputToFind) {
 
         Boolean isUser = false;
@@ -29,6 +31,8 @@ public class InputFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        numberOfUsers = dataList.size();
 
         for (String[] fileLine : dataList) {
 

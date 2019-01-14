@@ -10,13 +10,11 @@ import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputStrings;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getFromFile;
 
-//import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
-
 public class LogIn {
 
 public static String userLoggedName;
 
-    public static void run() {
+    public static void logIn() {
 
         Boolean isLoginOK = false;
         String inpUser = null;
@@ -50,7 +48,7 @@ public static String userLoggedName;
             if (checkUser) {
 
                 userData = getFromFile(inpUser);
-                System.out.print("\nEnter password: ");
+                System.out.print("Enter password: ");
                 String inputPass = inputStrings();
 
                 if (inputPass.equals(userData[1])) {
@@ -63,7 +61,7 @@ public static String userLoggedName;
                     }
                     isLoginOK = true;
                     clearScreen();
-                    userLoggedName = userData[0];
+                    userLoggedName = inpUser;
                     isUserLogged=true;
                 } else {
                     if ((logProof - logCounter) > 1) {

@@ -120,11 +120,11 @@ public class Menu {
         }
 
         if (!isUserLogged) {
-            System.out.println("You coose " + levelType + " quiz with level " + chosenLevel + ". Good luck!");
+            System.out.println("You choose " + levelType + " quiz with level " + chosenLevel + ". Good luck!");
             System.out.println("Enter your name/nick below to assign your quiz score to it");
             System.out.println("Q - Back to Main Menu");
         } else {
-            System.out.print("You coose " + levelType + " quiz with level " + chosenLevel);
+            System.out.print("Alright " + userLoggedName + ". You choose " + levelType + " quiz with level " + chosenLevel);
 //            System.out.println("Good luck " + userLoggedName + "!");
 //            System.out.println("Q - Back to Main Menu");
 //            if (isUserLogged){

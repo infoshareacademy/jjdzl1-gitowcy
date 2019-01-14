@@ -7,7 +7,7 @@ import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.run;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.logIn;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogOut.outLog;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.UserRegistration.registration;
@@ -15,7 +15,7 @@ import static java.lang.System.exit;
 
 public class UserChoice {
 
-    public static String userName;
+    public static String userName = userLoggedName;
 
     public static void userChoice() {
 
@@ -61,9 +61,7 @@ public class UserChoice {
                 printQuizHeader();
             }
         } else if (fromWhatMenu == 11) {
-
             registration();
-
         } else {
             System.out.print("Your choice: ");
             String userChoice = scanner.next();
@@ -99,7 +97,7 @@ public class UserChoice {
                     showQuizMenu();
                 } else if (fromWhatMenu == 10) {
                     clearScreen();
-                    run();
+                    logIn();
                 }
                 break;
             case "2":
