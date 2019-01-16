@@ -16,11 +16,10 @@ public class LogOut {
         String inpUser = "";
 
         clearScreen();
-        System.out.println("\nAre you sure you you want to log out?" +
-                " If yes, press: Y");
+        System.out.println("\nAre you sure you you want to log out? If yes, press: Y");
         System.out.println("Press B to back the Menu");
+        System.out.print("\nYour choice: ");
         inpUser = InputKeys.inputStrings();
-        System.out.println("Entered: " + inpUser);
 
         if (inpUser != null) {
             switch (inpUser) {
@@ -56,18 +55,19 @@ public class LogOut {
 
     private static void logoutProcedure() {
 
-        String loggedOutInfo = "You are logged out! Wait a moment.";
+        String loggedOutInfo = "You are logged out! Wait a moment...";
+        userLoggedName = null;
         userLoggedName = null;
         isUserLogged = false;
 
-        System.out.println(loggedOutInfo);
+        System.out.println("\n" + loggedOutInfo);
 
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        pressAnyKeyToContinue();
+
         clearScreen();
         showLoginMenu();
     }
