@@ -4,10 +4,10 @@ import com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.pressAnyKeyToContinue;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 
 public class LogOut {
 

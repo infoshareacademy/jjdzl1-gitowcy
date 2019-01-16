@@ -1,7 +1,6 @@
 package com.infoshare.academy.jjdzl1gitowcy.user_controller;
 
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
-import com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice;
 
 import java.util.Arrays;
 import java.util.List;
