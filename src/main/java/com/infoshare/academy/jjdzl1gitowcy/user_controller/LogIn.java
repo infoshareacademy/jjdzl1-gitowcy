@@ -1,26 +1,32 @@
 package com.infoshare.academy.jjdzl1gitowcy.user_controller;
 
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
-import com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys;
+import com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.isUserLogged;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userMenuChoice;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputStrings;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getFromFile;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getUserDataFromFile;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getUserFromFile;
 
 public class LogIn {
 
 public static String userLoggedName;
+public static String userLoggedId;
 
     public static void logIn() {
 
-        Boolean isLoginOK = false;
+        boolean isLoginOK = false;
         String inpUser = null;
         int logCounter = 1;
         int logProof = 3;
-        Boolean checkUser = false;
+        boolean checkUser = false;
         String[] userData = null;
         String logProofDesc = "Login proof No.";
         String logProof2 = "failed. Left only";
@@ -31,7 +37,7 @@ public static String userLoggedName;
             System.out.print("\nEnter login: ");
             inpUser = inputStrings();
 
-            if (getFromFile(inpUser) != null) {
+            if (getUserFromFile(inpUser) != null) {
                 checkUser = true;
             } else {
                 checkUser = false;
@@ -47,7 +53,7 @@ public static String userLoggedName;
 
             if (checkUser) {
 
-                userData = getFromFile(inpUser);
+                userData = getUserFromFile(inpUser);
                 System.out.print("Enter password: ");
                 String inputPass = inputStrings();
 
@@ -62,7 +68,8 @@ public static String userLoggedName;
                     isLoginOK = true;
                     clearScreen();
                     userLoggedName = inpUser;
-                    isUserLogged=true;
+                    userLoggedId = userData[2];
+                    isUserLogged = true;
                 } else {
                     if ((logProof - logCounter) > 1) {
                         System.out.printf("Invalid Password! %n %s %s %s %s %s!",
@@ -80,9 +87,30 @@ public static String userLoggedName;
             System.out.println("The last login proof failed! Please, try to register a new user account.");
             isUserLogged = false;
         }
-
         userData = null; // Delete user data table from memory
+
         Menu.showMainMenu();
     }
 
+    public static void userProfile() {
+
+        List<String[]> userDataProfile = getUserDataFromFile();
+        String splitChar = "\\p{Punct}";
+        Scanner scanner = new Scanner(System.in);
+
+        for (String[] row : userDataProfile) {
+            if (row.length < 4) {
+                String line = Arrays.toString(row);
+                System.out.println(line);
+            } else {
+                String[] line = Arrays.toString(row).split(splitChar);
+                System.out.println("Score: " + line[2].trim() + "/" + line[3].trim() + ", Test: " + line[4].trim());
+            }
+        }
+
+        System.out.print("\nYour choice: ");
+        String choice = scanner.next();
+        System.out.println();
+        userMenuChoice(choice);
+    }
 }

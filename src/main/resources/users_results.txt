@@ -1,46 +1,19 @@
-Kamil: 5/5, PHP
-Mike: 3/5, HTML
-Adrian: 5/5, Java
-Marcin: 3/10, PHP
-Boris: 0/9, HTML
-Kamil: 0/5, Java
-Kamil: 1/9, HTML
-Kamil: 1/10, HTML
-Kamil: 1/10, HTML
-Kamil: 1/10, HTML
-Kamil: 7/10, HTML
-Adrian: 8/10, HTML
-Mikołaj: 1/5, Java
-kamil: 1/1, Java
-kamil: 0/5, Java
-Waldek: 2/10, PHP
-kamil: 0/5, Java
-kamil: 1/1, Java
-null: 2/10, 
-null: 0/1, 
-gggggggggggg: 2/10, PHP
-hhhhhhhhhhh: 0/5, Java
-jjjjjjjjjjjj: 0/5, Java
-jjjjjjjjjj: 10/10, HTML
-hhhhhhhhhh: 10/10, PHP
-ggggggg: 9/10, PHP
-kkkkkk: 10/10, PHP
-bandyta: 8/10, HTML
-jedrek: 0/5, Java
-jedrek: 6/10, PHP
-gffgdf: 3/10, PHP
-null: 7/10, PHP
-null: 0/5, Java
-null: 0/5, Java
-null: 3/10, PHP
-null: 0/1, 
-null: 0/5,
-kamil: 5/10, PHP
-null: 0/5, Java
-null: 1/5, Java
-null: 10/10, HTML
-adam: 0/5, Java
-null: 3/10, PHP
-null: 0/5, Java
-null: 1/5, Java
-user: 0/5, Java
+jedrek|0,5|Java|2
+jedrek|6,10|PHP|2
+user|3,10|PHP|1
+jedrek|7,10|PHP|2
+jedrek|0,5|Java|2
+kamil|0,5|Java|4
+jedrek|3,10|PHP|2
+heniek|0,10|PHP|3
+heniek|0,5|HTML|3
+kamil|5,10|PHP|4
+user|0,5|Java|1
+admin|1,5|Java|6
+user|10,10|HTML|1
+adam|0,5|Java|5
+adam|3,10|PHP|5
+adam|0,5|Java|5
+admin|1,5|Java|6
+user|0,5|Java|1
+kamil|10,10|HTML|4

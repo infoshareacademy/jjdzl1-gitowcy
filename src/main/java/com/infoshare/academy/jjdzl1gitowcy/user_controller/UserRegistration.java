@@ -8,14 +8,14 @@ import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.showLoginMenu;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getFromFile;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.getUserFromFile;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.InputFile.numberOfUsers;
 
 public class UserRegistration {
 
     public static void registration() {
 
-        Integer userId = 0;
+        int userId = 0;
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter login: ");
@@ -64,7 +64,7 @@ public class UserRegistration {
     public static boolean checkIfLoginExist(String login) {
 
         Boolean isLoginExist = false;
-        String[] usersData = getFromFile(login);
+        String[] usersData = getUserFromFile(login);
 
         if (usersData != null) {
             isLoginExist = false;

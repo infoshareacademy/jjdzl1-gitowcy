@@ -7,8 +7,7 @@ import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.logIn;
-import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.*;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogOut.outLog;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.UserRegistration.registration;
 import static java.lang.System.exit;
@@ -62,6 +61,8 @@ public class UserChoice {
             }
         } else if (fromWhatMenu == 11) {
             registration();
+        } else if (fromWhatMenu == 12) {
+            userProfile();
         } else {
             System.out.print("Your choice: ");
             String userChoice = scanner.next();
@@ -100,6 +101,7 @@ public class UserChoice {
                     logIn();
                 }
                 break;
+
             case "2":
                 if (fromWhatMenu == 1) {
                     clearScreen();
@@ -119,12 +121,11 @@ public class UserChoice {
                     showMainMenu();
                 }
                 break;
+
             case "3":
                 if (fromWhatMenu == 1) {
                     clearScreen();
-                    System.out.println("Hmm, we don't have this choice. Try again...");
-                    System.out.println();
-                    showMainMenu();
+                    showUserProfile();
                 } else if (fromWhatMenu == 2) {
                     clearScreen();
                     showQuizStartMenu(userChoice);
@@ -139,6 +140,7 @@ public class UserChoice {
                     showRegisterMenu();
                 }
                 break;
+
             case "4":
                 if (fromWhatMenu == 1) {
                     clearScreen();
@@ -153,12 +155,20 @@ public class UserChoice {
                     showMainMenu();
                 }
                 break;
+
             case "Q":
                 System.out.println("Return to us again!");
                 exit(0);
             case "q":
                 System.out.println("Return to us again!");
                 exit(0);
+            case "B":
+                clearScreen();
+                showMainMenu();
+            case "b":
+                clearScreen();
+                showMainMenu();
+
             default: {
                 clearScreen();
                 System.out.println("Hmm, we don't have this choice. Try again...");

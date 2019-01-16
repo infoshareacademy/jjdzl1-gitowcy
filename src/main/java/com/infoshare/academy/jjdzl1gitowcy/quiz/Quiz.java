@@ -1,23 +1,20 @@
 package com.infoshare.academy.jjdzl1gitowcy.quiz;
 
 import au.com.bytecode.opencsv.CSVReader;
-
 import com.infoshare.academy.jjdzl1gitowcy.menu.Menu;
-import com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
-import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputNumbers;
-import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.*;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.checkUserAnswer;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
+import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedId;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.userLoggedName;
 
 public class Quiz {
@@ -134,9 +131,8 @@ public class Quiz {
     public static void printUserResult(int quizLength) {
         clearScreen();
         System.out.println("Quiz was ended. Here you have your score.");
-        userResultsToSave = userLoggedName + ": " + goodAnswerCounter + "/" + quizLength + ", " + quizName;
+        userResultsToSave = userLoggedName + "|" + goodAnswerCounter + "/" + quizLength + "|" + quizName + "|" + userLoggedId;
 
-        System.out.println(userResultsToSave);
         saveUserResultToFile(userResultsToSave);
     }
 
@@ -187,14 +183,13 @@ public class Quiz {
         SimpleDateFormat ft = new SimpleDateFormat("dd_MM_yyyy");
         String todayDate = ft.format(dNow);
         //String resultDataToSave = String.format("%s_%s_%s_%s", userName, quizName, levelName, todayDate);
-        String resultDataToSave = userResultsToSave;
         String destToSave = "src/main/resources/users_results.txt";
         File file = new File(destToSave);
         FileWriter resultToSave = null;
 
         try {
             resultToSave = new FileWriter(file, true);
-            resultToSave.write(resultDataToSave);
+            resultToSave.write(userResultsToSave);
             resultToSave.write("\n");
             resultToSave.close();
             System.out.println("Your score was successfully saved.");

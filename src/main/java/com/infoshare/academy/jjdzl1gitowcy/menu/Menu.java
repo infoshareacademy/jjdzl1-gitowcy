@@ -19,6 +19,9 @@ public class Menu {
         System.out.println("--- CHOOSE WHAT YOU WANT TO DO ---");
         System.out.println("1 - Solve a Quiz");
         System.out.println("2 - Add a Quiz");
+        if (isUserLogged) {
+            System.out.println("3 - Check your results");
+        }
         System.out.println("Q - Exit the program");
         if (isUserLogged) {
             System.out.println("L - Log out user: " + userLoggedName);
@@ -159,12 +162,22 @@ public class Menu {
     }
 
     public static void showRegisterMenu() {
-        System.out.println("-- REGISTER YOUR ACCOUNT--");
+        System.out.println("--- REGISTER YOUR ACCOUNT ---");
         System.out.println("B - Back to Main Menu");
         System.out.println("Q - Exit the program");
 
         //Eleventh level of menu
         fromWhatMenu = 11;
+        userChoice();
+    }
+
+    public static void showUserProfile() {
+        System.out.println("--- " + userLoggedName.toUpperCase() + " PROFILE ACCOUNT ---");
+        System.out.println("B - Back to Main Menu");
+        System.out.println("Q - Exit the program");
+
+        //Twelfth level of menu
+        fromWhatMenu = 12;
         userChoice();
     }
 }
