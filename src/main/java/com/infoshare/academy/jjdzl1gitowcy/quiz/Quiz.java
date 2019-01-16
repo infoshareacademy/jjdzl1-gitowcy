@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputNumbers;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.checkUserAnswer;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
@@ -131,7 +132,21 @@ public class Quiz {
     public static void printUserResult(int quizLength) {
         clearScreen();
         System.out.println("Quiz was ended. Here you have your score.");
-        userResultsToSave = userLoggedName + "|" + goodAnswerCounter + "/" + quizLength + "|" + quizName + "|" + userLoggedId;
+
+        if (isUserLogged) {
+//            Date dNow = new Date();
+//            SimpleDateFormat ft = new SimpleDateFormat("dd_MM_yyyy");
+//            String todayDate = ft.format(dNow);
+//            String resultDataToSave = String.format("%s, %s, %s, %s, %s, %s", userLoggedName, goodAnswerCounter, quizLength, quizName, levelName, todayDate);
+//
+//            userResultsToSave = resultDataToSave; //useName + ": " + goodAnswerCounter + "/" + quizLength + ", " + quizName;
+
+            userResultsToSave = userLoggedName + "|" + goodAnswerCounter + "/" + quizLength + "|" + quizName + "|" + userLoggedId;
+
+        } else {
+            userResultsToSave = userName + ": " + goodAnswerCounter + "/" + quizLength + ", " + quizName;
+        }
+        System.out.println(userResultsToSave);
 
         saveUserResultToFile(userResultsToSave);
     }
