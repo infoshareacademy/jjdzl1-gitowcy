@@ -61,9 +61,13 @@ public class InputFile {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] lineFromFile = line.split(splitChar);
 
-                if (lineFromFile[4].equals(userLoggedId)) {
-                    userResultData.add(lineFromFile);
-                    isData = true;
+                if (lineFromFile.length != 5) {
+                    break;
+                } else {
+                    if (lineFromFile[4].equals(userLoggedId)) {
+                        userResultData.add(lineFromFile);
+                        isData = true;
+                    }
                 }
             }
         } catch (IOException e) {
