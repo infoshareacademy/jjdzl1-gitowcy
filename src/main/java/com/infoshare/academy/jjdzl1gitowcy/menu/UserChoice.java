@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 import static com.infoshare.academy.jjdzl1gitowcy.file_tools.UserFile.addFileFromUser;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
-import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.printQuizHeader;
-import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.searchFileByName;
+import static com.infoshare.academy.jjdzl1gitowcy.quiz.Quiz.*;
 import static com.infoshare.academy.jjdzl1gitowcy.screen_tools.ScreenManager.clearScreen;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogIn.*;
 import static com.infoshare.academy.jjdzl1gitowcy.user_controller.LogOut.outLog;
@@ -14,7 +13,7 @@ import static java.lang.System.exit;
 
 public class UserChoice {
 
-    public static String userName = userLoggedName;
+    public static String userName = "";
 
     public static void userChoice() {
 
@@ -42,7 +41,7 @@ public class UserChoice {
                 showMainMenu();
             } else {
                 clearScreen();
-                printQuizHeader();
+                loadUsersQuiz(quizNameToSolve);
             }
 
         } else if (fromWhatMenu == 5 && isUserLogged) {
@@ -164,9 +163,15 @@ public class UserChoice {
                 exit(0);
             case "B":
                 clearScreen();
+                if (fromWhatMenu == 1) {
+                    showLoginMenu();
+                }
                 showMainMenu();
             case "b":
                 clearScreen();
+                if (fromWhatMenu == 1) {
+                    showLoginMenu();
+                }
                 showMainMenu();
 
             default: {

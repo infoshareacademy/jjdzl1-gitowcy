@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import static com.infoshare.academy.jjdzl1gitowcy.menu.Menu.*;
+import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userChoice;
 import static com.infoshare.academy.jjdzl1gitowcy.menu.UserChoice.userName;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.InputKeys.inputNumbers;
 import static com.infoshare.academy.jjdzl1gitowcy.quiz.QuizCheck.checkUserAnswer;
@@ -144,7 +145,7 @@ public class Quiz {
             userResultsToSave = userLoggedName + "|" + goodAnswerCounter + "/" + quizLength + "|" + quizName + "|" + userLoggedId;
 
         } else {
-            userResultsToSave = userName + ": " + goodAnswerCounter + "/" + quizLength + ", " + quizName;
+            userResultsToSave = userName + "|" + goodAnswerCounter + "," + quizLength;
         }
         System.out.println(userResultsToSave);
 
@@ -166,11 +167,9 @@ public class Quiz {
         if (listOfQuizzes == null) {
             System.out.println("We don't have quiz in this language...");
         } else if (listOfQuizzes.length == 1) {
-
             quizNameToSolve = listOfQuizzes[0];
             printQuizHeader();
         } else {
-
             System.out.println("Select the quiz you want to solve:");
             for (int i = 0; i < listOfQuizzes.length; i++) {
                 System.out.println(j + ". " + listOfQuizzes[i]);
@@ -189,7 +188,9 @@ public class Quiz {
 
         quizNameToSolve = listOfQuizzes[numberFromQuizListToSolve - 1];
 
-        loadUsersQuiz(quizNameToSolve);
+        fromWhatMenu = 5;
+        userChoice();
+        //loadUsersQuiz(quizNameToSolve);
     }
 
     public static void saveUserResultToFile(String userResultsToSave) {

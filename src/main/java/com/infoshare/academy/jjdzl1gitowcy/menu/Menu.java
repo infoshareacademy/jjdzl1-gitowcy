@@ -22,6 +22,7 @@ public class Menu {
         if (isUserLogged) {
             System.out.println("3 - Check your results");
         }
+        System.out.println("B - Back to Main Menu");
         System.out.println("Q - Exit the program");
         if (isUserLogged) {
             System.out.println("L - Log out user: " + userLoggedName);
